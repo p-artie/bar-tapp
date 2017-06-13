@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170613220523) do
+ActiveRecord::Schema.define(version: 20170613223404) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,18 @@ ActiveRecord::Schema.define(version: 20170613220523) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "order_items", force: :cascade do |t|
+    t.integer "shots"
+    t.integer "quantity"
+    t.text "instructions"
+    t.bigint "drink_id"
+    t.bigint "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["drink_id"], name: "index_order_items_on_drink_id"
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+  end
+
   create_table "orders", force: :cascade do |t|
     t.string "email"
     t.string "stripe_token"
@@ -46,4 +58,6 @@ ActiveRecord::Schema.define(version: 20170613220523) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "order_items", "drinks"
+  add_foreign_key "order_items", "orders"
 end

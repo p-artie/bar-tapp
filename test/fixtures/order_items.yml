@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shots: 1
+  quantity: 1
+  instructions: MyText
+  drink: one
+  order: one
+
+two:
+  shots: 1
+  quantity: 1
+  instructions: MyText
+  drink: two
+  order: two
