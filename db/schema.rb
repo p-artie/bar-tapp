@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170613223404) do
+ActiveRecord::Schema.define(version: 20170613224222) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 20170613223404) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "bar_id"
+    t.index ["bar_id"], name: "index_drinks_on_bar_id"
   end
 
   create_table "order_items", force: :cascade do |t|
@@ -56,8 +58,12 @@ ActiveRecord::Schema.define(version: 20170613223404) do
     t.string "stripe_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "bar_id"
+    t.index ["bar_id"], name: "index_orders_on_bar_id"
   end
 
+  add_foreign_key "drinks", "bars"
   add_foreign_key "order_items", "drinks"
   add_foreign_key "order_items", "orders"
+  add_foreign_key "orders", "bars"
 end
