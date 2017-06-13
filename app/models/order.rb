@@ -1,4 +1,4 @@
-class Drink < ApplicationRecord
+class Order < ApplicationRecord
   has_many :order_items
   belongs_to :bar
 end
