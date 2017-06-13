@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bars</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Name</th>
+      <th>Logo</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zipcode</th>
+      <th>Phone</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bars.each do |bar| %>
+      <tr>
+        <td><%= bar.email %></td>
+        <td><%= bar.password %></td>
+        <td><%= bar.name %></td>
+        <td><%= bar.logo %></td>
+        <td><%= bar.address %></td>
+        <td><%= bar.city %></td>
+        <td><%= bar.state %></td>
+        <td><%= bar.zipcode %></td>
+        <td><%= bar.phone %></td>
+        <td><%= bar.description %></td>
+        <td><%= link_to 'Show', bar %></td>
+        <td><%= link_to 'Edit', edit_bar_path(bar) %></td>
+        <td><%= link_to 'Destroy', bar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bar', new_bar_path %>

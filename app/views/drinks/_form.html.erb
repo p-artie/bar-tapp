@@ -1,0 +1,37 @@
+<%= form_with(model: drink, local: true) do |form| %>
+  <% if drink.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(drink.errors.count, "error") %> prohibited this drink from being saved:</h2>
+
+      <ul>
+      <% drink.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :drink_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :drink_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price, id: :drink_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.text_field :image, id: :drink_image %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
