@@ -1,4 +1,4 @@
-<%= form_with(model: order, local: true) do |form| %>
+<%= form_with(model: [@bar, order], local: true) do |form| %>
   <% if order.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
@@ -19,6 +19,11 @@
   <div class="field">
     <%= form.label :stripe_token %>
     <%= form.text_field :stripe_token, id: :order_stripe_token %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bar_id %>
+    <%= form.text_field :bar_id, id: :bar_id %>
   </div>
 
   <div class="actions">

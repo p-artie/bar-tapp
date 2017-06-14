@@ -14,7 +14,8 @@ class DrinksController < ApplicationController
 
   # GET /drinks/new
   def new
-    @drink = Drink.new
+    @bar = Bar.find(params[:bar_id])
+    @drink = @bar.drinks.new
   end
 
   # GET /drinks/1/edit
@@ -24,11 +25,12 @@ class DrinksController < ApplicationController
   # POST /drinks
   # POST /drinks.json
   def create
-    @drink = Drink.new(drink_params)
+    @bar = Bar.find(params[:bar_id])
+    @drink = @bar.drinks.new(drink_params)
 
     respond_to do |format|
       if @drink.save
-        format.html { redirect_to @drink, notice: 'Drink was successfully created.' }
+        format.html { redirect_to bar_drinks_path, notice: 'Drink was successfully created.' }
         format.json { render :show, status: :created, location: @drink }
       else
         format.html { render :new }
@@ -56,7 +58,7 @@ class DrinksController < ApplicationController
   def destroy
     @drink.destroy
     respond_to do |format|
-      format.html { redirect_to drinks_url, notice: 'Drink was successfully destroyed.' }
+      format.html { redirect_to bar_drinks_path, notice: 'Drink was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

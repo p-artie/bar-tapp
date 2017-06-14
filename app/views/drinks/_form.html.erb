@@ -1,4 +1,4 @@
-<%= form_with(model: drink, local: true) do |form| %>
+<%= form_with(model: [@bar, drink], local: true) do |form| %>
   <% if drink.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(drink.errors.count, "error") %> prohibited this drink from being saved:</h2>
@@ -29,6 +29,11 @@
   <div class="field">
     <%= form.label :image %>
     <%= form.text_field :image, id: :drink_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bar_id %>
+    <%= form.text_field :bar_id, id: :bar_id %>
   </div>
 
   <div class="actions">
