@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  root "bars#index"
   resources :order_items
 
   # resources :drinks
