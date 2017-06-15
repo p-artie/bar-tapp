@@ -13,6 +13,7 @@
         <th>Bar Name</th>
         <th>Rating</th>
         <th>Address</th>
+        <th>Order Drinks</th>
       </tr>
     </thead>
     <tbody>
@@ -20,19 +21,10 @@
       <% @res.each do |bar| %>
       <tr>
         <td><%= image_tag bar.photos.first.nil? ? '' : bar.photos.first.fetch_url(100) %></td>
-        <% if bar.name == @bars.find_by(name: "#{bar.name}").name%>
-
         <td><%= link_to bar.name, "/bars/#{@bars.find_by(name: bar.name).id}/drinks" %></td>
-        <% else %>
-        <td><%= "No Bar Tapp" %></td>
-        <td><%= @bars.find_by(name: "#{bar.name}").name %></td>
-        <td><%= bar.name %></td>
-        
-        <% end %>
-        
         <td><%= bar.rating %></td>
         <td><%= bar.vicinity %></td>
-
+        <td><button><%=link_to "BarTapp", "/bars/#{@bars.find_by(name: bar.name).id}/drinks" %></button></td>
 
       </tr> 
       <% end %>
