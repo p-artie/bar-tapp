@@ -40,8 +40,10 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
 end
+gem "binding_of_caller"
 
 group :development do
+  gem "better_errors"
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
@@ -53,4 +55,10 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'hirb'
+gem 'bootstrap-sass', '~>3.3', '>=3.3.6'
+
+gem 'jquery-rails'
+gem 'google_places'
+gem 'httparty'
+
 ruby "2.4.1"

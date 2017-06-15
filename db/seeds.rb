@@ -9,8 +9,8 @@
 
  Bar.create(email: "artie@gmail.com", password: "1234", name: "Gramps", logo: "https://mindysolomongallery.files.wordpress.com/2013/11/gramps1.jpg", address: "176 NW 24th ST", city: "Miami", state: "Florida", zipcode: "33127", phone: "3056992669", description: "Trendy hangout serving cocktails & craft beer amid live entertainment ranging from bands to comics.")
 
-Order.create(email: "oscarnoe@gmail.com", stripe_token: "12345")
+Order.create(email: "oscarnoe@gmail.com", stripe_token: "12345", bar_id: 1)
 
-Drink.create(name: "Screwdriver", description: "2-Orange Juice\r\n1-Vodka", price: 0.55e1, image: "http://www.drinkswap.com/images/da/2857.jpg")
+Drink.create(name: "Screwdriver", description: "2-Orange Juice\r\n1-Vodka", price: 0.55e1, image: "http://www.drinkswap.com/images/da/2857.jpg", bar_id: 1)
 
 OrderItem.create(shots: 1, quantity: 1, instructions: "No ice!", drink_id: 1, order_id: 1)
