@@ -4,7 +4,8 @@ class DrinksController < ApplicationController
   # GET /drinks
   # GET /drinks.json
   def index
-    @drinks = Drink.all
+    @bar = Bar.find(params[:bar_id])
+    @drinks = @bar.drinks.all
   end
 
   # GET /drinks/1
