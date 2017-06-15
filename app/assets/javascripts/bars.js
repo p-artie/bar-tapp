@@ -13,3 +13,9 @@
 //     x.innerHTML = "Latitude: " + position.coords.latitude +
 //     "<br>Longitude: " + position.coords.longitude;
 // }
+
+var bar = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyDZXTCzH0s0nEwgcAlNom-O1bLGzB3V3o0&location=25.8030863,-80.20433799999999&radius=5000&rankby=distance"
+
+$.get(bar, function(data){
+  console.log(data);
+});

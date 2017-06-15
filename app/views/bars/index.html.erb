@@ -37,4 +37,33 @@
 <br>
 
 
-<%= link_to 'New Bar', new_bar_path %>
+
+<br>
+<div class="bs-example" data-example-id="striped-table">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Logo</th>
+        <th>Bar Name</th>
+        <th>Rating</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @client = GooglePlaces::Client.new("AIzaSyDZXTCzH0s0nEwgcAlNom-O1bLGzB3V3o0") %>
+      <% res = @client.spots(25.8030863,-80.20433799999999, :types => 'bar')  %>
+      <% res.each do |bar| %>
+      <tr>
+        <td><%= image_tag bar.photos[0].fetch_url(100)  %></td>
+        <td><%= bar.name  %></td>
+        <td><%= bar.rating %></td>
+        <td><%= bar.vicinity %></td>
+      </tr>
+      <% end %>
+
+    </tbody>
+  </table>
+</div>
+<!--
+<div id="map"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZXTCzH0s0nEwgcAlNom-O1bLGzB3V3o0&libraries=places&callback=initMap" async defer></script> -->
