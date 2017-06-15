@@ -1,9 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<% postres = HTTParty.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAxQsrLXpnyeclKsKCTcqZ9d7Nn92gRkn8").to_json %>
-<% parse = JSON.parse(postres)%>
-<% lat = parse["location"]["lat"] %>
-<% lon = parse["location"]["lng"] %>
+
 
 <h1>Pick a bar!</h1>
 
@@ -19,21 +16,30 @@
       </tr>
     </thead>
     <tbody>
-      <% @client = GooglePlaces::Client.new("AIzaSyDZXTCzH0s0nEwgcAlNom-O1bLGzB3V3o0", :radius => 500) %>
-      <% res = @client.spots(lat, lon, :types => 'bar')  %>
-
-      <% res.each do |bar| %>
+     
+      <% @res.each do |bar| %>
       <tr>
         <td><%= image_tag bar.photos.first.nil? ? '' : bar.photos.first.fetch_url(100) %></td>
-        <td><%= bar.name  %></td>
+        <% if bar.name == @bars.find_by(name: "#{bar.name}").name%>
+
+        <td><%= link_to bar.name, "/bars/#{@bars.find_by(name: bar.name).id}/drinks" %></td>
+        <% else %>
+        <td><%= "No Bar Tapp" %></td>
+        <td><%= @bars.find_by(name: "#{bar.name}").name %></td>
+        <td><%= bar.name %></td>
+        
+        <% end %>
+        
         <td><%= bar.rating %></td>
         <td><%= bar.vicinity %></td>
+
 
       </tr> 
       <% end %>
     </tbody>
   </table>
 </div>
+
 <!--
 <div id="map"></div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZXTCzH0s0nEwgcAlNom-O1bLGzB3V3o0&libraries=places&callback=initMap" async defer></script> -->
