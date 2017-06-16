@@ -4,6 +4,12 @@ class BarsController < ApplicationController
   # GET /bars
   # GET /bars.json
   def index
+    postres = HTTParty.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAxQsrLXpnyeclKsKCTcqZ9d7Nn92gRkn8").to_json
+    parse = JSON.parse(postres)
+    lat = parse["location"]["lat"] 
+    lon = parse["location"]["lng"] 
+    @client = GooglePlaces::Client.new("AIzaSyDZXTCzH0s0nEwgcAlNom-O1bLGzB3V3o0", :radius => 500)
+    @res = @client.spots(lat, lon, :types => 'bar')
     @bars = Bar.all
   end
 
