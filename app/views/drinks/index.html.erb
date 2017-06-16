@@ -20,14 +20,10 @@
         <td><%= drink.name %></td>
         <td><%= drink.description %></td>
         <td><%= drink.price %></td>
-        <td><%= link_to 'Show', drink %></td>
-        <td><%= link_to 'Edit', edit_drink_path(drink) %></td>
-        <td><%= link_to 'Destroy', drink, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Buy Drink', ("/bars/#{params[:bar_id]}/drinks/#{drink.id}"), class: "btn btn-default" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Drink', new_bar_drink_path %>

@@ -24,7 +24,7 @@
         <td><%= link_to bar.name, "/bars/#{@bars.find_by(name: bar.name).id}/drinks" %></td>
         <td><%= bar.rating %></td>
         <td><%= bar.vicinity %></td>
-        <td><button><%=link_to "BarTapp", "/bars/#{@bars.find_by(name: bar.name).id}/drinks" %></button></td>
+        <td><%=link_to "Bar Tapp", "/bars/#{@bars.find_by(name: bar.name).id}/drinks", class: "btn btn-default"%></td>
 
       </tr>
       <% end %>

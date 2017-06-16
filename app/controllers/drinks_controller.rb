@@ -1,5 +1,5 @@
 class DrinksController < ApplicationController
-  before_action :set_drink, only: [:show, :edit, :update, :destroy]
+  before_action :set_drink, only: [:edit, :update, :destroy]
 
   # GET /drinks
   # GET /drinks.json
@@ -11,6 +11,8 @@ class DrinksController < ApplicationController
   # GET /drinks/1
   # GET /drinks/1.json
   def show
+    @bar = Bar.find(params[:bar_id])
+    @drink = @bar.drinks.find(params[:id])
   end
 
   # GET /drinks/new
