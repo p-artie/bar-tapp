@@ -17,7 +17,7 @@
       </tr>
     </thead>
     <tbody>
-     
+
       <% @res.each do |bar| %>
       <tr>
         <td><%= image_tag bar.photos.first.nil? ? '' : bar.photos.first.fetch_url(100) %></td>
@@ -26,7 +26,7 @@
         <td><%= bar.vicinity %></td>
         <td><button><%=link_to "BarTapp", "/bars/#{@bars.find_by(name: bar.name).id}/drinks" %></button></td>
 
-      </tr> 
+      </tr>
       <% end %>
     </tbody>
   </table>
