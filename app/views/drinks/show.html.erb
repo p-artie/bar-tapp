@@ -1,9 +1,13 @@
+<div class="test">
+
+
 <p id="notice"><%= notice %></p>
 
 <p>
   <h1><%= @drink.name %></h1>
 </p>
 
+<div>
 <p>
   <%= image_tag @drink.image, :size => "130x90"%>
 </p>
@@ -16,3 +20,5 @@
   <strong>Price:</strong>
   <%= "$ #{@drink.price}"  %>
 </p>
+</div>
+</div>

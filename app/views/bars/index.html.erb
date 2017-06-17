@@ -2,11 +2,11 @@
 
 
 
-<h1>Pick a bar!</h1>
+<h1 id="bar-header">Pick a bar!</h1>
 
 <br>
 <div class="bs-example" data-example-id="striped-table">
-  <table class="table table-striped">
+  <table class="table table-striped table-responsive">
     <thead>
       <tr>
         <th>Logo</th>
@@ -17,7 +17,6 @@
       </tr>
     </thead>
     <tbody>
-
       <% @res.each do |bar| %>
       <tr>
         <td><%= image_tag bar.photos.first.nil? ? '' : bar.photos.first.fetch_url(100) %></td>
@@ -25,7 +24,6 @@
         <td><%= bar.rating %></td>
         <td><%= bar.vicinity %></td>
         <td><%=link_to "Bar Tapp", "/bars/#{@bars.find_by(name: bar.name).id}/drinks", class: "btn btn-default"%></td>
-
       </tr>
       <% end %>
     </tbody>
