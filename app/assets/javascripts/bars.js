@@ -19,3 +19,9 @@ var bar = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIza
 $.get(bar, function(data){
   console.log(data);
 });
+
+$(function(){
+     $(".table").on("click", "tr[role=\"button\"]", function (e) {
+          window.location = $(this).data("href");
+     });
+});
