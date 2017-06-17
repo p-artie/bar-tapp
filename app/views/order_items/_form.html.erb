@@ -1,4 +1,4 @@
-<%= form_with(model: order_item, local: true) do |form| %>
+<%= form_with(model: [order_item], local: true) do |form| %>
   <% if order_item.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(order_item.errors.count, "error") %> prohibited this order_item from being saved:</h2>
