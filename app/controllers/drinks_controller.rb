@@ -30,16 +30,26 @@ class DrinksController < ApplicationController
   def create
     @bar = Bar.find(params[:bar_id])
     @drink = @bar.drinks.new(drink_params)
+    @order = @bar.orders.new(order_params)
 
     respond_to do |format|
-      if @drink.save
-        format.html { redirect_to bar_drinks_path, notice: 'Drink was successfully created.' }
-        format.json { render :show, status: :created, location: @drink }
+      if @order.save
+        format.html { redirect_to bar_drink_path }
+        format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
-        format.json { render json: @drink.errors, status: :unprocessable_entity }
+        format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
+    # respond_to do |format|
+    #   if @drink.save
+    #     format.html { redirect_to bar_drinks_path, notice: 'Drink was successfully created.' }
+    #     format.json { render :show, status: :created, location: @drink }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @drink.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /drinks/1

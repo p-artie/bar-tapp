@@ -27,10 +27,12 @@ class OrdersController < ApplicationController
   def create
     @bar = Bar.find(params[:bar_id])
     @order = @bar.orders.new(order_params)
+    @drink = @bar.drinks.find(params[:drink_id])
+
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to bar_orders_path, notice: 'Order was successfully created.' }
+        format.html { redirect_to bar_drink_path(@bar, @drink)}
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
