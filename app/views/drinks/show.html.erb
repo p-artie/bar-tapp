@@ -1,24 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @drink.name %>
+  <h1><%= @drink.name %></h1>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <%= image_tag @drink.image, :size => "130x90"%>
+</p>
+
+<p>
   <%= @drink.description %>
 </p>
 
 <p>
   <strong>Price:</strong>
-  <%= @drink.price %>
+  <%= "$ #{@drink.price}"  %>
 </p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @drink.image %>
-</p>
-
-<%= link_to 'Edit', edit_drink_path(@drink) %> |
-<%= link_to 'Back', bar_drinks_path(@bar) %>

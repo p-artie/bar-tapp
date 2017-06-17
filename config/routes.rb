@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   # resources :drinks
   resources :bars do
-    resources :drinks, shallow: true
+    resources :drinks, only: [:index, :show]
     resources :orders, shallow: true
   end
 
