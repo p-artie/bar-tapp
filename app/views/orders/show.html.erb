@@ -9,6 +9,15 @@
   <strong>Stripe token:</strong>
   <%= @order.stripe_token %>
 </p>
+<p>
+  <strong>Stripe token:</strong>
+  <%= @order.order_items %>
+</p>
+
+<h1>This view should be the review order page. Need to display all the order items attached to order. </h1>
+<p>Creating a variable in the cotroller might help us display the order items easier. </p>
+
+
+
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>

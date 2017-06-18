@@ -13,6 +13,7 @@ class DrinksController < ApplicationController
   def show
     @bar = Bar.find(params[:bar_id])
     @drink = @bar.drinks.find(params[:id])
+    @order = Order.last
   end
 
   # GET /drinks/new

@@ -24,11 +24,14 @@ class OrderItemsController < ApplicationController
   # POST /order_items
   # POST /order_items.json
   def create
+    @bar = Bar.find(params[:bar_id])
+    @order = Order.last
     @order_item = OrderItem.new(order_item_params)
+    @drink = @bar.drinks.find(params[:order_item][:drink_id])
 
     respond_to do |format|
       if @order_item.save
-        format.html { redirect_to @order_item, notice: 'Order item was successfully created.' }
+        format.html { redirect_to order_path(@order.id)}
         format.json { render :show, status: :created, location: @order_item }
       else
         format.html { render :new }
