@@ -20,5 +20,29 @@
   <strong>Price:</strong>
   <%= "$ #{@drink.price}"  %>
 </p>
+<%= form_for([@order.order_items.build]) do |f| %>
+<p>
+  <%= f.label :shots %>
+  <%= f.number_field :shots, min: 1, value: 1 %>
+</p>
+<p>
+  <%= f.label :quantity  %>
+  <%= f.number_field :quantity, min: 1, value: 1  %>
+</p>
+<p>
+  <%= f.label :instructions  %>
+  <%= f.text_area :instructions, placeholder: "Example: Hold the ice..." %>
+</p>
+<p>
+  <%= f.hidden_field :drink_id, value: "#{@drink.id}" %>
+</p>
+<p>
+  <%= f.hidden_field :order_id %>
+</p>
+<p>
+  <%= f.submit "Review Order", :class => "btn" %>
+</p>
+<%= hidden_field_tag :bar_id, @bar.id %>
+<% end %>
 </div>
 </div>
