@@ -20,7 +20,17 @@
         <td><%= drink.name %></td>
         <td><%= drink.description %></td>
         <td><%= drink.price %></td>
-        <td><%= link_to 'Buy Drink', ("/bars/#{params[:bar_id]}/drinks/#{drink.id}"), class: "btn btn-default" %></td>
+        <td>
+          <%= form_for([@bar, @bar.orders.build]) do |f| %>
+            <p>
+              <%= f.hidden_field :bar_id %>
+            </p>
+            <p>
+              <%= f.submit "Add Drink", :class => "btn" %>
+            </p>
+            <%= hidden_field_tag :drink_id, drink.id %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
