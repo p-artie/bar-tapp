@@ -10,6 +10,11 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+    @order = Order.find(params[:id])
+    @items = OrderItem.where(order_id: @order)
+    @order_item = OrderItem.find_by(order_id: @order.id)
+    @drinks = Drink.where(id: "#{OrderItem.find(@order_item.id).drink_id}")
+    @bar = Bar.find(@order.bar_id)
   end
 
   # GET /orders/new
@@ -46,7 +51,7 @@ class OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+        format.html { redirect_to @order_item, notice: 'Drink has been updated.' }
         format.json { render :show, status: :ok, location: @order }
       else
         format.html { render :edit }
