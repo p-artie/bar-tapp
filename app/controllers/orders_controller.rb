@@ -13,8 +13,14 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @items = OrderItem.where(order_id: @order)
     @order_item = OrderItem.find_by(order_id: @order.id)
-    @drinks = Drink.where(id: "#{OrderItem.find(@order_item.id).drink_id}")
+    # @drinks = Drink.where(id: "#{OrderItem.find(@order.id).drink_id}")
     @bar = Bar.find(@order.bar_id)
+
+    @drink_ids = []
+    @items.each do |x|
+      @drink_ids << x.drink_id
+    end
+
   end
 
   # GET /orders/new
@@ -33,10 +39,13 @@ class OrdersController < ApplicationController
     @bar = Bar.find(params[:bar_id])
     @order = @bar.orders.new(order_params)
     @drink = @bar.drinks.find(params[:drink_id])
-
+    if session[:order_id]
+      redirect_to bar_drink_path(@bar, @drink) and return
+    end
 
     respond_to do |format|
       if @order.save
+        session[:order_id] = @order.id
         format.html { redirect_to bar_drink_path(@bar, @drink)}
         format.json { render :show, status: :created, location: @order }
       else

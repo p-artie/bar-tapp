@@ -24,6 +24,7 @@
         <td><%= bar.rating %></td>
         <td><%= bar.vicinity %></td>
         <td><%=link_to "Bar Tapp", "/bars/#{@bars.find_by(name: bar.name).id}/drinks", class: "btn btn-default"%></td>
+        
       </tr>
       <% end %>
     </tbody>
