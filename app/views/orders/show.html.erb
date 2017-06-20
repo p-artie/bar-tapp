@@ -1,23 +1,36 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @order.email %>
-</p>
-
-<p>
-  <strong>Stripe token:</strong>
-  <%= @order.stripe_token %>
-</p>
-<p>
-  <strong>Stripe token:</strong>
-  <%= @order.order_items %>
-</p>
-
-<h1>This view should be the review order page. Need to display all the order items attached to order. </h1>
-<p>Creating a variable in the cotroller might help us display the order items easier. </p>
+<h1> Order: <%= @order.id %></h1>
 
 
+<table class="table table-striped table-responsive">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Shots</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Instructions</th>
+    </tr>
+  </thead>
+  <tbody>
 
+<% @items.each do |item| %>
+    <tr>
+      <%= form_for(item, method: "patch") do |f| %>
+        <td><%= image_tag @drinks[0].image, :size => "130x90" %></td>
+        <td><%= @drinks[0].name %></td>
+        <td><%= f.number_field :shots, min: 1, value: item.shots %></td>
+        <td><%= f.number_field :quantity, min: 1, value: item.quantity  %></td>
+        <td><%= @drinks[0].price %></td>
+        <td><%= f.text_area :instructions, value: item.instructions %></td>
+        <td><%= f.submit "Update Drink", :class => "btn" %></td>
+      <% end %>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
+<h1>We want to reload page or de-press button when you update a drink!</h1>
+<h1>We need to move the hidden order creating button from the menu screen to the bar selection screen.</h1>
+<h1>We also want to add a submit button to pay and move on to progress screen!</h1>
