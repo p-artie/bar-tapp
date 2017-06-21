@@ -47,7 +47,7 @@ class OrderItemsController < ApplicationController
       if @order_item.update(order_item_params)
         format.html { redirect_to order_path, notice: 'Drink has been updated.' }
         format.json { render :show, status: :ok, location: @order_item }
-        return
+          return
       else
         format.html { render :edit }
         format.json { render json: @order_item.errors, status: :unprocessable_entity }
