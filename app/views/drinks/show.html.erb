@@ -18,13 +18,9 @@
 
 <p>
   <strong>Price:</strong>
-  <%= "$#{@drink.price}"  %>
+  <%= pretty_amount(@drink.price)  %>
 </p>
 <%= form_for([@order.order_items.build]) do |f| %>
-<p>
-  <%= f.label :shots %>
-  <%= f.number_field :shots, min: 1, value: 1 %>
-</p>
 <p>
   <%= f.label :quantity  %>
   <%= f.number_field :quantity, min: 1, value: 1  %>
