@@ -39,7 +39,7 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Amount: <%= pretty_amount(500) %></span>
+      <span>Amount: <%= pretty_amount(@amount) %></span>
     </label>
   </article>
 
@@ -47,7 +47,13 @@
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="<%= @description %>"
           data-amount="<%= @amount %>"
-          data-locale="auto"></script>
+          data-locale="auto">
+  </script>
+
 <% end %>
 
 <%= link_to 'Add a drink', bar_drinks_path(@bar) %>
+
+<h1>Thought about adding the total of drinks to the session hash to then add it to the order once stripe payment goes through.</h1>
+
+<h1>Need to set amount variable in orders controller to actually grab total!</h1>
