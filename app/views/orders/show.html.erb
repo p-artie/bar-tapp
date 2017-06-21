@@ -6,7 +6,6 @@
     <tr>
       <th>Image</th>
       <th>Name</th>
-      <th>Shots</th>
       <th>Quantity</th>
       <th>Price</th>
       <th>Instructions</th>
@@ -21,9 +20,8 @@
         <td><%= image_tag Drink.find(@drink_ids[index]).image, :size => "130x90" %></td>
         <td><%= Drink.find(@drink_ids[index]).name%></td>
 
-        <td><%= f.number_field :shots, min: 1, value: item.shots %></td>
         <td><%= f.number_field :quantity, min: 1, value: item.quantity  %></td>
-        <td><%= Drink.find(@drink_ids[index]).price*(item.quantity*item.shots) %></td>
+        <td><%= Drink.find(@drink_ids[index]).price*item.quantity %></td>
         <td><%= f.text_area :instructions, value: item.instructions %></td>
         <td><%= f.submit "Update Drink", :class => "btn" %></td>
       <% end %>
