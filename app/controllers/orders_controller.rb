@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
       @drink_ids << x.drink_id
     end
 
-    @amount = 5000
+    @amount = @order.total
 
   end
 

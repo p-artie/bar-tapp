@@ -7,8 +7,9 @@
       <th>Image</th>
       <th>Name</th>
       <th>Quantity</th>
-      <th>Price</th>
       <th>Instructions</th>
+      <th>Unit Price</th>
+      <th>Price</th>
     </tr>
   </thead>
   <tbody>
@@ -21,13 +22,21 @@
         <td><%= Drink.find(@drink_ids[index]).name%></td>
 
         <td><%= f.number_field :quantity, min: 1, value: item.quantity  %></td>
-        <td><%= pretty_amount(Drink.find(@drink_ids[index]).price*item.quantity) %></td>
+
         <td><%= f.text_area :instructions, value: item.instructions %></td>
+        <td><%= pretty_amount(Drink.find(@drink_ids[index]).price) %></td>
+        <td><%= pretty_amount(Drink.find(@drink_ids[index]).price*item.quantity) %></td>
+
         <td><%= f.submit "Update Drink", :class => "btn" %></td>
       <% end %>
     </tr>
     <% end %>
-
+    <tr>
+      <td colspan="4"></td>
+      <td><strong>Order total</strong></td>
+      <td><%= pretty_amount(@order.total) %></td>
+      <td></td>
+    </tr>
   </tbody>
 </table>
 
@@ -51,9 +60,5 @@
   </script>
 
 <% end %>
-
-<%= link_to 'Add a drink', bar_drinks_path(@bar) %>
-
-<h1>Thought about adding the total of drinks to the session hash to then add it to the order once stripe payment goes through.</h1>
-
-<h1>Need to set amount variable in orders controller to actually grab total!</h1>
+<br>
+<%= link_to 'Add a drink', bar_drinks_path(@bar)%>

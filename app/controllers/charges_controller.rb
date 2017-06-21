@@ -25,7 +25,8 @@ class ChargesController < ApplicationController
       private
 
         def amount_to_be_charged
-          @amount = 500
+          @order = Order.find(session['order_id'])
+          @amount = 550
         end
 
         def set_description
