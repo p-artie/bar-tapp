@@ -5,6 +5,12 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     @orders = Order.all
+    @order_items = OrderItem.all
+
+    @drink_ids = []
+    @order_items.each do |x|
+      @drink_ids << x.drink_id
+    end
   end
 
   # GET /orders/1

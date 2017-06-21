@@ -6,6 +6,7 @@ class ChargesController < ApplicationController
     end
 
     def thanks
+      @order = Order.find(session['order_id'])
     end
 
     def create
