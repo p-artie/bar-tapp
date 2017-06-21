@@ -11,6 +11,7 @@ class BarsController < ApplicationController
     @client = GooglePlaces::Client.new("AIzaSyBwQn-19m9txwOvboBVotY-5RnexPFMtzY", :radius => 500)
     @res = @client.spots(lat, lon, :types => 'bar')
     @bars = Bar.all
+    reset_session
   end
 
   # GET /bars/1

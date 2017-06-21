@@ -19,7 +19,7 @@
         <td><%= image_tag drink.image, :size => "130x90" %></td>
         <td><%= drink.name %></td>
         <td><%= drink.description %></td>
-        <td><%= drink.price %></td>
+        <td><%= pretty_amount drink.price %></td>
         <td>
           <%= form_for([@bar, @bar.orders.build]) do |f| %>
             <p>
