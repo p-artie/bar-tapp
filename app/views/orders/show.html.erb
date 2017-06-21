@@ -21,7 +21,7 @@
         <td><%= Drink.find(@drink_ids[index]).name%></td>
 
         <td><%= f.number_field :quantity, min: 1, value: item.quantity  %></td>
-        <td><%= Drink.find(@drink_ids[index]).price*item.quantity %></td>
+        <td><%= pretty_amount(Drink.find(@drink_ids[index]).price*item.quantity) %></td>
         <td><%= f.text_area :instructions, value: item.instructions %></td>
         <td><%= f.submit "Update Drink", :class => "btn" %></td>
       <% end %>
@@ -31,8 +31,23 @@
   </tbody>
 </table>
 
+<%= form_tag charges_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>Amount: <%= pretty_amount(500) %></span>
+    </label>
+  </article>
 
-<h1>We also want to add a submit button to pay and move on to progress screen!</h1>
-
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="<%= @description %>"
+          data-amount="<%= @amount %>"
+          data-locale="auto"></script>
+<% end %>
 
 <%= link_to 'Add a drink', bar_drinks_path(@bar) %>

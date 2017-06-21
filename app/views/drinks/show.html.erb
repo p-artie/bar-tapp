@@ -18,7 +18,7 @@
 
 <p>
   <strong>Price:</strong>
-  <%= "$#{@drink.price}"  %>
+  <%= pretty_amount(@drink.price)  %>
 </p>
 <%= form_for([@order.order_items.build]) do |f| %>
 <p>
