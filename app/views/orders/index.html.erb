@@ -6,10 +6,6 @@
 <h1>Bartender View</h1>
 <h3>Orders</h3>
 
-
-
-<%= Drink.find(@order_items[0].drink_id).name  %>
-
 <table class= "table table-striped">
   <thead>
     <tr>
@@ -22,8 +18,8 @@
   </thead>
 
   <tbody>
-    <% @orders.each do |order| %>
-      <tr>
+    <% @orders.reverse.each do |order| %>
+      <tr id="rotten">
         <td>#<%= order.id %></td>
         <% @order_items.each_with_index do |item, index| %>
         <tr>
@@ -36,9 +32,9 @@
         </tr>
         <% end %>
 
-        <td><%= link_to 'Received', order, class: "btn btn-default"%></td>
+        <td><%= link_to 'Received',"#", class: "btn btn-default"%></td>
         <td><%= link_to 'In-Progress', "#", class: "btn btn-default" %></td>
-        <td><%= link_to 'Drink Ready', "#", method: :delete, class: "btn btn-default"%></td>
+        <td><%= link_to 'Drink Ready', "#", class: "btn btn-default"%></td>
       </tr>
     <% end %>
   </tbody>
