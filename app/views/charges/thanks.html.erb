@@ -1,19 +1,14 @@
-<h1><strong>  Order # <%= @order.id %> </strong></h1>
-
 <div id="totalbody">
+  <h1><strong>  Order # <%= @order.id %> </strong></h1>
 
-<h2>Thanks, you paid <span id="total"><strong><%= pretty_amount(@order.total) %></strong>!</span></h2>
-<h3 class="message">You order will be out shortly!</h3>
-<br>
-<div class="progress">
-  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
-    <span class="sr-only">45% Complete</span>
+  <h2>Thanks, you paid <strong><%= pretty_amount(@order.total) %></strong>!</h2>
+  <h3 class="message">You order will be out shortly!</h3>
 
-
-
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+      <span class="sr-only">45% Complete</span>
+    </div>
   </div>
-
-  <!-- <button id="code" type="button" class="btn btn-success" style="width:400px;" data-behavior="room_speaker">Generate Code</button> -->
 
   <h1 class="order-status" >Order Status</h1>
 
