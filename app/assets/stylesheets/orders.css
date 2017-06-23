@@ -4,6 +4,14 @@
 */
 .orders {
   font-family: 'Jura', sans-serif;
+  margin: 100px;
+}
+#stripeinfo {
+  justify-content: center;
+  text-align: center;
+}
+.reviewrow {
+  padding: 50px;
 }
 .order-status {
   text-align: left;

@@ -1,11 +1,9 @@
 <!--  This is the Drink MENU Page-->
 
-
-  <%= image_tag src="logo_long.png", size: "443 x 281"%>
-  <p id="notice"><%= notice %></p>
+<%= image_tag src="logo_long.png", size: "443 x 281", class: "logo"%>
 
 
-  <h1 id="barname"> <%=@bar.name %> Menu </h1>
+<h1 class="barname"> <%=@bar.name %> Menu </h1>
 
 
 <div class="row">
@@ -16,11 +14,11 @@
 <div class="xyz">
 <%= image_tag drink.image, style: 'display: block; margin: auto; width: 50%;' %>
 <br>
-<p id="drinkname"><%= drink.name %></p>
+<p class="drinkname"><%= drink.name %></p>
 <br>
 <p><%= drink.description %></p>
 <br>
-<p id="drinkprice"><%= pretty_amount drink.price %></p>
+<p class="drinkprice"><%= pretty_amount drink.price %></p>
 <br>
 <%= form_for([@bar, @bar.orders.build]) do |f| %>
 <%= f.hidden_field :bar_id %>
