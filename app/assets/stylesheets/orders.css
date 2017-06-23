@@ -5,3 +5,23 @@
 .orders {
   font-family: 'Jura', sans-serif;
 }
+.order-status {
+  text-align: left;
+
+}
+
+#messages .message:nth-child(2) p {
+  font-weight: bold;
+  font-size: 30px;
+  color: red;
+}
+#messages .message:nth-child(3) p  {
+  font-weight: bold;
+  font-size: 30px;
+  color: yellow;
+}
+#messages .message:nth-child(4) p  {
+  font-weight: bold;
+  font-size: 30px;
+  color: green;
+}

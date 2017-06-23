@@ -1,50 +1,49 @@
-<p id="notice"><%= notice %></p>
-
-<div id="my_div">
+<div id="my_div" class="container">
 
 
-<h1>Bartender View</h1>
-<h3>Orders</h3>
+  <h1>Bartender View</h1>
+  <h3>Orders</h3>
 
 
 
-<%= Drink.find(@order_items[0].drink_id).name  %>
+  <%= Drink.find(@order_items[0].drink_id).name  %>
 
-<table class= "table table-striped">
-  <thead>
-    <tr>
-      <th>Order Number</th>
-      <th>Drink Names</th>
-      <th>Quantity</th>
-      <th>Instructions</th>
-      <th colspan="3">Status</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @orders.each do |order| %>
+  <table class= "table table-striped">
+    <thead>
       <tr>
-        <td>#<%= order.id %></td>
-        <% @order_items.each_with_index do |item, index| %>
+        <th>Order Number</th>
+        <th>Drink Names</th>
+        <th>Quantity</th>
+        <th>Instructions</th>
+        <th colspan="3">Status</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @orders.each do |order| %>
         <tr>
-          <% if item.order_id == order.id %>
-            <td></td>
-            <td><%= Drink.find(@drink_ids[index]).name%></td>
-            <td><%= item.quantity  %></td>
-            <td><%= item.instructions %></td>
+          <td>#<%= order.id %></td>
+          <% @order_items.each_with_index do |item, index| %>
+          <tr>
+            <% if item.order_id == order.id %>
+              <td></td>
+              <td><%= Drink.find(@drink_ids[index]).name%></td>
+              <td><%= item.quantity  %></td>
+              <td><%= item.instructions %></td>
+            <% end %>
+          </tr>
           <% end %>
         </tr>
-        <% end %>
+      <% end %>
+    </tbody>
+  </table>
 
-        <td><%= link_to 'Received', order, class: "btn btn-default"%></td>
-        <td><%= link_to 'In-Progress', "#", class: "btn btn-default" %></td>
-        <td><%= link_to 'Drink Ready', "#", method: :delete, class: "btn btn-default"%></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
+  <button id="code1" type="button" class="btn btn-default" style="width:25%" data-behavior= "room_speaker" >Order Received</button>
+
+  <button id="code2" type="button" class="btn btn-default" style="width:25%" data-behavior= "room_speaker" >In-progress</button>
+
+  <button id="code3" type="button" class="btn btn-default" style="width:25%" data-behavior= "room_speaker" > Drink ready!</button>
+
+
 </div>
-
-<button id="code1" type="button" class="btn btn-success" style="width:400px;">Order Received</button>
-<button id="code2" type="button" class="btn btn-success" style="width:400px;">Inprogress</button>
-<button id="code3" type="button" class="btn btn-success" style="width:400px;">Drink is ready</button>

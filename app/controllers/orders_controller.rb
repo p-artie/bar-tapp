@@ -11,6 +11,7 @@ class OrdersController < ApplicationController
     @order_items.each do |x|
       @drink_ids << x.drink_id
     end
+    @messages = Message.all
   end
 
   # GET /orders/1
