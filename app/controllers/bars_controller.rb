@@ -9,7 +9,7 @@ class BarsController < ApplicationController
     lat = parse["location"]["lat"]
     lon = parse["location"]["lng"]
     @client = GooglePlaces::Client.new("AIzaSyBwQn-19m9txwOvboBVotY-5RnexPFMtzY", :radius => 500)
-    @res = @client.spots(lat, lon, :types => 'bar')
+    @res = @client.spots(25.7987956, -80.2042326, :types => 'bar')
     @bars = Bar.all
     reset_session
   end
