@@ -1,6 +1,10 @@
-<h1><strong> Your order number is # <%= @order.id %> </strong></h1>
+<div id="bg">
+  <img src="drinkhand.jpeg" alt="">
+</div>
+<div id="totalbody">
+<h1><strong> Your order number is #<%= @order.id %> </strong></h1>
 
-<h2>Thanks, you paid <strong><%= pretty_amount(@order.total) %></strong>!</h2>
+<h2>Thanks, you paid <span id="total"><strong><%= pretty_amount(@order.total) %></strong>!</span></h2>
 <h3 class="message">You order will be out shortly!</h3>
 <br>
 <div class="progress">
@@ -10,3 +14,4 @@
 </div>
 
 <button id="code" type="button" class="btn btn-success" style="width:400px;">Generate Code</button>
+</div>

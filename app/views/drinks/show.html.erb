@@ -1,8 +1,12 @@
-<div class="test">
+<!-- Page after drinks page -->
 
+<div class="review order">
+<div class="row">
+
+<div class="thumbnail">
 
 <p id="notice"><%= notice %></p>
-
+<div id="customdrink" class="xyz">
 <p>
   <h1><%= @drink.name %></h1>
 </p>
@@ -20,6 +24,7 @@
   <strong>Price:</strong>
   <%= pretty_amount(@drink.price)  %>
 </p>
+
 <%= form_for([@order.order_items.build]) do |f| %>
 <p>
   <%= f.label :quantity  %>
@@ -40,5 +45,8 @@
 </p>
 <%= hidden_field_tag :bar_id, @bar.id %>
 <% end %>
+</div>
+</div>
+</div>
 </div>
 </div>

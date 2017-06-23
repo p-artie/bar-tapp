@@ -1,3 +1,35 @@
 // Place all the styles related to the charges controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.thanks {
+    background-image: url("drinkhand.jpeg");
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+/* Preserve aspet ratio */
+min-width: 100%;
+min-height: 100%;
+
+    text-align: center;
+  #totalbody{
+    margin-top: 200px;
+    background-color: white;
+    padding: 100px;
+  }
+  #total {
+    color: green;
+  }
+}
+#bg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  min-height: 50%;
+}
