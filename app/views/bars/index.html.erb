@@ -20,11 +20,11 @@
       <% @res.each do |bar| %>
       <tr>
         <td><%= image_tag bar.photos.first.nil? ? '' : bar.photos.first.fetch_url(100) %></td>
-        <td><%= link_to bar.name, "/bars/#{@bars.find_by(name: bar.name).id}/drinks" %></td>
+        <td><%= link_to bar.name, "/bars/#{@bars.find_by(name: bar.name)&.id}/drinks" %></td>
         <td><%= bar.rating %></td>
         <td><%= bar.vicinity %></td>
-        <td><%=link_to "Bar Tapp", "/bars/#{@bars.find_by(name: bar.name).id}/drinks", class: "btn btn-default"%></td>
-        
+        <td><%=link_to "Bar Tapp", "/bars/#{@bars.find_by(name: bar.name)&.id}/drinks", class: "btn btn-default"%></td>
+
       </tr>
       <% end %>
     </tbody>
