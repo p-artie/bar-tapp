@@ -19,7 +19,7 @@ lat = parse["location"]["lat"]
 lon = parse["location"]["lng"]
 
   @client = GooglePlaces::Client.new("AIzaSyBwQn-19m9txwOvboBVotY-5RnexPFMtzY", :radius => 500)
-      res = @client.spots(lat, lon, :types => 'bar')
+      res = @client.spots(25.7987956, -80.2042326, :types => 'bar')
 
       res.each do |bar|
          Bar.create(email: "#{bar.name}@gmail.com", password: "1234", name: bar.name, address: bar.vicinity)

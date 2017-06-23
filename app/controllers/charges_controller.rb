@@ -7,6 +7,7 @@ class ChargesController < ApplicationController
 
     def thanks
       @order = Order.find(session['order_id'])
+      @messages = Message.all
     end
 
     def create
