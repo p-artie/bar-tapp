@@ -4,15 +4,63 @@
 */
 
 .drinks {
+  justify-content: center;
+  font-family: 'Jura', sans-serif;
+  background: rgba(76, 76, 76, .2);
+
+  p {
+    font-family: 'Jura', sans-serif;
+    line-height: 60px;
+    padding: 15px;
+    font-size: 4.5em;
+  }
   img {
+    width: 100%;
+    justify-content: center;
     border-radius: 50%;
-    border: 1px solid red;
-    transition: 2s;
-    &:hover {
-      transform: rotate(360deg);
     }
+  #barname{
+    font-size: 6em;
+    font-weight: bold;
+    padding-bottom: 80px;
+    margin-bottom: 40px;
+  }
+  #drinkname {
+    font-family: 'Jura', sans-serif;
+    font-size: 6em;
+    font-weight: bold;
+  }
+  #drinkprice {
+    font-family: 'Jura', sans-serif;
+    font-weight: bold;
+    font-size: 3.5em;
   }
   .test {
     text-align: center;
+  }
+  .drink_table {
+
+  }
+  .drink_row {
+
+  }
+  .row {
+
+    text-align: center;
+    // padding: 100px;
+  }
+  .btn {
+    font-family: 'Jura', sans-serif;
+    height: 100px;
+    width: 300px;
+    font-size: 60px;
+    box-shadow: 6px 10px 41px 0px rgba(0,0,0,0.75);
+  }
+  .xyz {
+    background: rgba(54, 25, 25, .03);
+    // background-color: gray;
+    padding: 50px;
+    margin: 50px;
+    
   }
 }
