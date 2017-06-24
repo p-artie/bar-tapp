@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
-  root "bars#index"
+  root "bars#root"
 
   resources :charges, only: [:new, :create]
 
   get 'thanks', to: 'charges#thanks', as: 'thanks'
-  
+
   get 'charges/new'
 
   get 'charges/create'

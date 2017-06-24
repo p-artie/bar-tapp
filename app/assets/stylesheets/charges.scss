@@ -8,6 +8,10 @@
     position: fixed;
     top: 0;
     left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
 
 /* Preserve aspet ratio */
 min-width: 100%;
@@ -15,9 +19,17 @@ min-height: 100%;
 
     text-align: center;
   #totalbody{
-    margin-top: 200px;
-    background-color: white;
-    padding: 100px;
+    margin: 50px 100px;
+    background-color: rgba(54, 25, 25, .05);
+    padding: 50px;
+    border-radius: 10px;
+  }
+  #order-status-back {
+    margin: 300px 100px;
+    // background-color: rgba(200, 200, 200, .05);
+    padding: 50px;
+    border-radius: 10px;
+    color: white;
   }
   #total {
     color: green;

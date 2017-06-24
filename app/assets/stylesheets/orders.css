@@ -2,34 +2,68 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+.logo {
+  width: 75vw;
+  height: 22vw;
+}
 .orders {
-  font-family: 'Jura', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 100px;
 }
 #stripeinfo {
   justify-content: center;
   text-align: center;
 }
+#order-number {
+  font-size: 5.5em;
+}
+#thanks-paid {
+  font-size: 4.5em;
+}
+.message{
+  font-size: 3.5em;
+}
 .reviewrow {
   padding: 50px;
 }
 .order-status {
-  text-align: left;
-
+  text-align: center;
 }
 
+.progress-back {
+  margin: 50px;
+
+}
+.progress {
+  height: 50px;
+  border-radius: 20px;
+}
+.order-status {
+  font-size: 6em;
+}
 #messages .message:nth-child(2) p {
-  font-weight: bold;
-  font-size: 30px;
-  color: #5bc0de;
+  font-size: 1em;
+  color: white;
+  background-color: rgba(91, 192, 222, 0.8);
+  border-radius: 10px;
 }
 #messages .message:nth-child(3) p  {
-  font-weight: bold;
-  font-size: 30px;
-  color: #F89406;
+  font-size: 1em;
+  color: white;
+  border-radius: 10px;
+  background-color: rgba(248, 148, 6, 0.8);
 }
 #messages .message:nth-child(4) p  {
-  font-weight: bold;
-  font-size: 30px;
-  color: #51A351;
+  color: white;
+  border-radius: 10px;
+  background-color: rgba(81, 163, 81, 0.8);
+  font-size: 1.5em;
+}
+#checkmark {
+  color: white;
+  border-radius: 100%;
+  background-color: rgba(81, 163, 81, 0.8);
+  font-size: 15em;
+  margin: auto;
+  width: 45%;
 }

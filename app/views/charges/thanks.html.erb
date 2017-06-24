@@ -1,13 +1,26 @@
-<div id="totalbody">
-  <h1><strong>  Order # <%= @order.id %> </strong></h1>
+<div id="totalbody container">
+  <%= image_tag src="logo_long_trimmed3.png", class: "logo"  %>
+  <h1 id="order-number" ><strong>  Order # <%= @order.id %> </strong></h1>
 
-  <h2>Thanks, you paid <strong><%= pretty_amount(@order.total) %></strong>!</h2>
-  <h3 class="message">You order will be out shortly!</h3>
+  <h2 id="thanks-paid">Thanks, you paid <strong><%= pretty_amount(@order.total) %></strong>!</h2>
+  <h3 class="message" >Your order will be out shortly!</h3>
 
-  <div class="progress">
-    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
-      <span class="sr-only"></span>
+  <div class="progress-back">
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+        <span class="sr-only"></span>
+      </div>
     </div>
   </div>
+</div>
 
+<div id="order-status-back">
   <h1 class="order-status" >Order Status</h1>
+
+  <div id="messages">
+    <h1 style="display: none;"><%= render @messages.last  %></h1>
+  </div>
+  <!-- <i class="fa fa-thumbs-up" aria-hidden="true" ></i> -->
+  <p id="checkmark"  style="display: none;">✓</p>
+
+</div>
