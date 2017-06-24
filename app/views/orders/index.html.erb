@@ -1,10 +1,7 @@
 <div id="my_div" class="container">
 
-
   <h1>Bartender View</h1>
   <h3>Orders</h3>
-
-
 
   <%= Drink.find(@order_items[0].drink_id).name  %>
 
@@ -38,12 +35,10 @@
     </tbody>
   </table>
 
-
   <button id="code1" type="button" class="btn btn-default" style="width:25%" data-behavior= "room_speaker" >Order Received</button>
 
   <button id="code2" type="button" class="btn btn-default" style="width:25%" data-behavior= "room_speaker" >In-progress</button>
 
   <button id="code3" type="button" class="btn btn-default" style="width:25%" data-behavior= "room_speaker" > Drink ready!</button>
-
 
 </div>

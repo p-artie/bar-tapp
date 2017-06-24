@@ -2,18 +2,18 @@ $( document ).ready(function() {
     console.log( "Dom's ready! Let's go!" );
 
   $('#code1').click(function () {
-    $('#code1').attr("class", "btn btn-success");
-    App.room.speak("Order has been recieved");
+    $('#code1').attr("class", "btn btn-success", "disabled", "disabled");
+    App.room.speak("Order Recieved");
   })
 
   $('#code2').click(function () {
     $('#code2').attr("class", "btn btn-success");
-    App.room.speak("You drink is being made!");
+    App.room.speak("In-Progress");
   })
 
   $('#code3').click(function () {
     $('#code3').attr("class", "btn btn-success");
-    App.room.speak("Your drink is ready!");
+    App.room.speak("Ready!");
   })
 
 
@@ -22,15 +22,16 @@ $( document ).ready(function() {
     console.log(n);
     if (n === 2 ) {
       var val = 33 + '%';
-      $('.progress-bar').attr("class", "progress-bar progress-bar-info progress-bar-striped progress-bar-striped active").width(val).text(val);
+      $('.progress-bar').attr("class", "progress-bar progress-bar-info progress-bar-striped progress-bar-striped active").width(val);
     }
     else if (n === 3) {
       var val = 66 + '%';
-      $('.progress-bar').attr("class", "progress-bar progress-bar-warning progress-bar-striped active").width(val).text(val);
+      $('.progress-bar').attr("class", "progress-bar progress-bar-warning progress-bar-striped active").width(val);
     }
     else if (n === 4 ) {
       var val = 100 + '%';
-      $('.progress-bar').attr("class", "progress-bar progress-bar-success progress-bar-striped active").width(val).text(val);
+      $('.progress-bar').attr("class", "progress-bar progress-bar-success progress-bar-striped active").width(val);
+      $('#checkmark').css("display", "block");
     }
   };
   setInterval(myFunction, 1000);

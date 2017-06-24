@@ -3,6 +3,10 @@ class BarsController < ApplicationController
 
   # GET /bars
   # GET /bars.json
+
+  def root
+  end
+  
   def index
     postres = HTTParty.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAxQsrLXpnyeclKsKCTcqZ9d7Nn92gRkn8").to_json
     parse = JSON.parse(postres)
