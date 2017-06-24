@@ -21,15 +21,15 @@
 #messages .message:nth-child(2) p {
   font-weight: bold;
   font-size: 30px;
-  color: red;
+  color: #5bc0de;
 }
 #messages .message:nth-child(3) p  {
   font-weight: bold;
   font-size: 30px;
-  color: yellow;
+  color: #F89406;
 }
 #messages .message:nth-child(4) p  {
   font-weight: bold;
   font-size: 30px;
-  color: green;
+  color: #51A351;
 }
