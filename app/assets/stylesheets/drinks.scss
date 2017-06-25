@@ -4,6 +4,7 @@
 */
 
 .drinks {
+  background: url("drinkhand.jpeg");
   justify-content: center;
   font-family: 'Jura', sans-serif;
   h1 {
@@ -44,7 +45,7 @@
     text-align: center;
   }
   #customdrink {
-    background: rgba(221, 209, 193, .5);
+    background: rgba(200, 200, 200, .3);
   }
   .drink_table {
   }
