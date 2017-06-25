@@ -7,25 +7,26 @@
 <div class="container">
 <div class="card">
   <div class="card-head">
-          <img src="https://s5.postimg.org/wy79025cz/nike_Logo_White.png" alt="logo" class="card-logo">
+          <%= image_tag src="thumbnail.png", class: "card-logo" %>
     <img src="<%= drink.image%>" alt="Beer" class="product-img">
     <div class="product-detail">
         <h2><%= drink.name %></h2><%=raw drink.description %>
       </div>
       <span class="back-text">
-              BEER
+
             </span>
 </div>
 <div class="card-body">
   <div class="product-desc">
           <span class="product-title">
-                  Francisco's<b>Bar</b>
+                  <%= @bar.name  %>
+
                   <span class="badge">
                     New
                   </span>
           </span>
           <span class="product-caption">
-                  One of a Kind
+                  Drink rating:
                 </span>
           <span class="product-rating">
                   <i class="fa fa-star"></i>
@@ -39,7 +40,7 @@
 
 
           <span class="product-price">
-                  USD<b><%= pretty_amount drink.price %></b>
+                  <b><%= pretty_amount drink.price %></b>
                 </span>
         </div>
         <%= form_for([@bar, @bar.orders.build]) do |f| %>

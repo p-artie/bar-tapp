@@ -14,8 +14,8 @@
   font-family: 'Roboto', sans-serif;
 }
 .card-order {
-  width: 905px;
-  margin-left: -70px;
+  width: 90vw;
+  margin: 100px auto;
 }
 
 .card-head {
@@ -27,7 +27,7 @@
   /* FF3.6-15 */
   background: -webkit-linear-gradient(-45deg, #2F0CE8 8%, #3FF090 83%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, #2F1FFF 8%, #3FF090 83%);
+  background: linear-gradient(135deg, #8e9eab 8%, #eef2f3 83%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
   border-radius: 80px 80px 0 0;
@@ -37,7 +37,7 @@
 }
 
 .card-logo {
-  width: 130px;
+  width: 250px;
   margin: 20px;
   margin-left: 60px;
   margin-top: 60px;
@@ -51,7 +51,7 @@
   width: 60%;
 }
 .order-img {
-  margin-left: 250px;
+  margin-left: 450px;
   margin-top: 250px;
   width: 65%;
 }
@@ -71,11 +71,12 @@
 }
 
 .product-detail h2 {
-  font-size: 55px;
+  font-size: 65px;
   font-weight: 500;
   letter-spacing: 2px;
   padding-bottom: 27px;
   text-transform: uppercase;
+  // margin-left: -50px;
 }
 .product-detail-order-name {
   margin-left: 250px;
@@ -95,7 +96,7 @@
   border-radius: 0 0 80px 80px;
 }
 .card-body-order {
-  height: 770px;
+  height: 700px;
 }
 
 .product-title {
@@ -109,6 +110,8 @@
 .product-title-order p {
   margin-top: 70px;
   margin-bottom: -140px;
+  margin-left: -200px;
+  font-size: 60px;
 }
 
 .product-title b {
@@ -119,9 +122,9 @@
 .badge {
   position: relative;
   font-size:40px;
-  font-weight: 300;
-  color: #fff;
-  background: #11e95b;
+  font-weight: bolder;
+  color: #FFCD32;
+  background: black;
   padding: 6px 16px;
   border-radius: 12px;
   top: -2px;
@@ -133,7 +136,7 @@
   display: block;
   margin-top: 15px;
   padding: 0 20px;
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -240,38 +243,38 @@
 
 .product-price {
   position: absolute;
-  background: #11e95b;
+  background: #8e9eab;
   padding: 12px 65px;
   text-align: center;
   display: inline-block;
-  font-size: 60px;
+  font-size: 80px;
   font-weight: 200;
   color: #fff;
   border-radius: 21px;
   margin-top: -135px;
-  margin-left: 410px;
-  box-shadow: -10px 20px 15px -10px rgba(17, 233, 91, 0.3);
+  margin-left: 500px;
+  box-shadow: -10px 20px 15px -10px rgba(142, 158, 171, 0.4);
 }
 
 .product-price b {
   margin-left: 5px;
 }
 .product-price-order {
-  margin-top: -20px;
-  margin-left: 480px;
+  margin-top: 10px;
+  margin-left: 580px;
 }
 .card__addToCart {
   display: block;
   margin: 0 auto 15px;
   margin-top: 30px;
   padding: 35px 150px 35px 150px;
-  border: 5px solid #fff;
+  border: 5px solid #000;
   border-radius: 50px;
   text-align: center;
   text-transform: uppercase;
   font-size: 34px;
-  color: #1468FC;
-  border-color: #1468FC;
+  color: #000;
+
   background: white;
 }
 .instructions {
@@ -279,27 +282,27 @@
   display: block;
 }
 .instructions p {
-font-size: 34px;
+font-size: 50px;
 }
 .inst1 {
   margin-left: 50px;
   margin-top: -30px;
 }
 .inst2 {
-  margin: -235px 0px 0px 250px;
+  margin: -255px 20px 0px 280px;
 }
 .instructionsfield {
   margin: 0 auto 15px;
   margin-top: 30px;
   padding: 0px 0px 0px 0px;
-  border: 3px solid #3891C2;
+  border: 3px solid #000;
   border-radius: 10px;
   text-align: center;
   text-transform: uppercase;
   font-size: 40px;
-  color: #1468FC;
-  border-color: #3891C2;
+  color: #000;
   background: white;
+  width: 560px;
 }
 .two {
   padding: 6px 155px 6px 50px;
@@ -311,7 +314,7 @@ font-size: 34px;
   margin-left: 10px;
 }
 .instructionsfield label {
-font-size: 34px;
+font-size: 50px;
 }
 .addToCartOrder {
   margin-top: 60px;
