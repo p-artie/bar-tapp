@@ -8,7 +8,7 @@
 }
 .orders {
   font-family: 'Roboto', sans-serif;
-  margin: 100px;
+  height: 100vh;
 }
 #stripeinfo {
   justify-content: center;
@@ -66,4 +66,7 @@
   font-size: 15em;
   margin: auto;
   width: 45%;
+}
+.orders__header{
+  margin-top: 0;
 }

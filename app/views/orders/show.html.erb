@@ -1,58 +1,50 @@
-<h1> Review Order # <%= @order.id %></h1>
+<div id="orders">
 
-<table class="table table-striped table-responsive">
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Name</th>
-      <th>Quantity</th>
-      <th>Instructions</th>
-      <th>Unit Price</th>
-      <th>Price</th>
-    </tr>
-  </thead>
-  <tbody>
-
-<% @items.each_with_index do |item, index| %>
-    <tr class="reviewrow">
-      <%= form_for(item, method: "patch") do |f| %>
-        <td><%= image_tag Drink.find(@drink_ids[index]).image, :size => "130x90" %></td>
-        <td><%= Drink.find(@drink_ids[index]).name%></td>
-        <td><%= f.number_field :quantity, min: 1, value: item.quantity  %></td>
-        <td><%= f.text_area :instructions, value: item.instructions %></td>
-        <td><%= pretty_amount(Drink.find(@drink_ids[index]).price) %></td>
-        <td><%= pretty_amount(Drink.find(@drink_ids[index]).price*item.quantity) %></td>
-        <td><%= f.submit "Update Drink", :class => "btn" %></td>
+  <h1 class="orders__header"> Review Order # <%= @order.id %></h1>
+  <% @items.each_with_index do |item, index| %>
+      <tr class="reviewrow">
+        <%= form_for(item, method: "patch") do |f| %>
+          <td><%= image_tag Drink.find(@drink_ids[index]).image, :size => "130x90" %></td>
+          <td><%= Drink.find(@drink_ids[index]).name%></td>
+          <td><%= f.number_field :quantity, min: 1, value: item.quantity  %></td>
+          <td><%= f.text_area :instructions, value: item.instructions %></td>
+          <td><%= pretty_amount(Drink.find(@drink_ids[index]).price) %></td>
+          <td><%= pretty_amount(Drink.find(@drink_ids[index]).price*item.quantity) %></td>
+          <td><%= f.submit "Update Drink", :class => "btn" %></td>
+        <% end %>
+      </tr>
       <% end %>
-    </tr>
-    <% end %>
-    <tr>
-      <td colspan="4"></td>
-      <td><strong>Order total</strong></td>
-      <td><%= pretty_amount(@order.total) %></td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
-<div id="stripeinfo">
-<%= form_tag charges_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-      <span>Amount: <%= pretty_amount(@amount) %></span>
-    </label>
-  </article>
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="<%= @description %>"
-          data-amount="<%= @amount %>"
-          data-locale="auto">
-  </script>
-<% end %>
-<br>
-<%= link_to 'Add a drink', bar_drinks_path(@bar)%>
+      <tr>
+        <td colspan="4"></td>
+        <td><strong>Order total</strong></td>
+        <td><%= pretty_amount(@order.total) %></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <div id="stripeinfo">
+  <%= form_tag charges_path do %>
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+      <label class="amount">
+        <span>Amount: <%= pretty_amount(@amount) %></span>
+      </label>
+    </article>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="<%= @description %>"
+            data-amount="<%= @amount %>"
+            data-locale="auto">
+    </script>
+  <% end %>
+  <br>
+  <%= link_to 'Add a drink', bar_drinks_path(@bar)%>
+  </div>
+
+  </div>
+
 </div>
