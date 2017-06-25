@@ -25,13 +25,15 @@ lon = parse["location"]["lng"]
          Bar.create(email: "#{bar.name}@gmail.com", password: "1234", name: bar.name, address: bar.vicinity)
       end
       Bar.all.each do |bar|
-      	Drink.create(name: "Screwdriver", description: "2-Orange Juice\r\n1-Vodka", price: 550, image: "http://www.drinkswap.com/images/da/2857.jpg", bar_id: bar.id)
-      	Drink.create(name: "Bloody Mary", description: "2-Tomato Juice\r\n1-Vodka", price: 650, image: "http://cdn.liquor.com/wp-content/uploads/2014/01/recipe-hopped-up-bloody-mary.jpg", bar_id: bar.id)
-      	Drink.create(name: "Cuba Libre", description: "2-Coke\r\n1-Rum", price: 750, image: "http://shake-that.com/wp-content/uploads/2015/07/Cuba-Libre1-780x780.jpg", bar_id: bar.id)
-      	Drink.create(name: "Tequila Sunrise", description: "2-Orange Juice\r\n1-Tequila", price: 550, image: "http://www.foodiecrush.com/wp-content/uploads/2015/09/Tequila-Sunrise-foodiecrush.com-020.jpg", bar_id: bar.id)
-      	Drink.create(name: "Mojito", description: "2-Lime Juice\r\n1-Rum", price: 450, image: "http://cdn.liquor.com/wp-content/uploads/2010/09/herradura-tequila-mojito.jpg", bar_id: bar.id)
-      	Drink.create(name: "Pina Colada", description: "2-Pineapple\r\n1-Rum\r\n1-Cream of Coconut", price: 550, image: "http://www.saveur.com/sites/saveur.com/files/styles/large_1x_/public/import/2014/images/2012-06/7-frozen-pina-colada-400.jpg?itok=zXZ2ExPX", bar_id: bar.id)
-      	Drink.create(name: "Miami Vice", description: "2-Fruit\r\n1-Rum", price: 850, image: "http://cdn.shopify.com/s/files/1/1387/0585/products/Miami_Vice_grande.jpg?v=1471365702", bar_id: bar.id)
-      	Drink.create(name: "CoronaRita", description: "2-Margerita\r\n1-Corona", price: 950, image: "https://pull01-kegworks.netdna-ssl.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/c/o/corona-rita-b1_1_1.jpg", bar_id: bar.id)
-      	Drink.create(name: "Caipirinha", description: "2-Cachaca\r\n1-Lime", price: 950, image: "http://cdn3.foodviva.com/static-content/food-images/brazilian-drinks/caipirinha-cocktail/caipirinha-cocktail.jpg", bar_id: bar.id)
+        #Add Margin Left Dynamically for Drink Margin: XXpx
+      	Drink.create(name: "Screwdriver", description: "<p>2 Orange Juice</p><br><p>1 Vodka</p>", price: 550, image: "http://az659704.vo.msecnd.net/v1/image/c_lpad,w_1500,h_1500/v1400602509/cocktail_bloody_screwdriver-1.png", bar_id: bar.id)
+      	Drink.create(name: "Bloody Mary", description: "<p>2 Tomato Juice</p><br><p>1 Vodka</p>", price: 650, image: "http://az659704.vo.msecnd.net/v1/image/c_lpad,w_1500,h_1500/v1400602501/cocktail_bloody_mary-1.png", bar_id: bar.id)
+      	Drink.create(name: "Cuba Libre", description: "<p>2 Coke</p><br><p>1 Rum</p>", price: 750, image: "http://www.drinkoftheweek.com/wp-content/thumbnails/1400.png", bar_id: bar.id)
+      	Drink.create(name: "Tequila Sunrise", description: "<p>2 Orange Juice</p><br><p>1 Tequila</p>", price: 550, image: "http://www.tequilasunrisecocktail.com/data/images/cocktail/3_1404922491_tequila.png", bar_id: bar.id)
+      	Drink.create(name: "Mojito", description: "<p>2 Lime Juice</p><br><p>1 Rum</p>", price: 450, image: "http://www.pngmart.com/files/4/Mojito-Transparent-Background.png", bar_id: bar.id)
+      	Drink.create(name: "Pina Colada", description: "<p>2 Pineapple</p><br><p>1 Cream of Coconut</p>", price: 550, image: "http://donq.com/assets/recipes/images/large/LazyPinaColada_large.png", bar_id: bar.id)
+      	Drink.create(name: "Miami Vice", description: "<p>2 Fruit</p><br><p>1 Rum</p>", price: 850, image: "http://az659704.vo.msecnd.net/v1/image/c_lpad,w_1500,h_1500/v1400603979/cocktail_virgin_cherry_fizzy-1.png", bar_id: bar.id)
+      	Drink.create(name: "CoronaRita", description: "<p>2 Margerita</p><br><p>1 Corona</p>", price: 950, image: "http://monterreymex.com/wordpress/wp-content/uploads/2015/05/coronarita.png", bar_id: bar.id)
+      	Drink.create(name: "Caipirinha", description: "<p>2 Cachaca</p><br><p>1 Lime</p>", price: 950, image: "http://maloga.net/image/cache/data/caipi-500x500.png", bar_id: bar.id)
       end
+Message.create(content: "Hello World!")

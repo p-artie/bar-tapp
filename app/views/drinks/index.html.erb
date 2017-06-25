@@ -1,32 +1,53 @@
 <!--  This is the Drink MENU Page-->
+<!-- drink.image -->
 
-<%= image_tag src="logo_long.png", size: "443 x 281", class: "logo"%>
-
-
-<h1 class="barname"> <%=@bar.name %> Menu </h1>
-
-<div class="row">
-
-<div class="thumbnail">
-
+<body id="drinks">
+<div style="padding: 30px"></div>
 <% @drinks.each do |drink| %>
-<div class="xyz">
-<%= image_tag drink.image, style: 'display: block; margin: auto; width: 50%;' %>
-<br>
-<p class="drinkname"><%= drink.name %></p>
-<br>
-<p><%= drink.description %></p>
-<br>
-<p class="drinkprice"><%= pretty_amount drink.price %></p>
-<br>
-<%= form_for([@bar, @bar.orders.build]) do |f| %>
-<%= f.hidden_field :bar_id %>
-<%= f.submit "Add Drink", :class => "btn" %>
-<%= hidden_field_tag :drink_id, drink.id %>
+<div class="container">
+<div class="card">
+  <div class="card-head">
+          <%= image_tag src="thumbnail.png", class: "card-logo" %>
+    <img src="<%= drink.image%>" alt="Beer" class="product-img">
+    <div class="product-detail">
+        <h2><%= drink.name %></h2><%=raw drink.description %>
+      </div>
+      <span class="back-text">
+
+            </span>
+</div>
+<div class="card-body">
+  <div class="product-desc">
+          <span class="product-title">
+                  <%= @bar.name  %>
+
+                  <span class="badge">
+                    New
+                  </span>
+          </span>
+          <span class="product-caption">
+                  Drink rating:
+                </span>
+          <span class="product-rating">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star grey"></i>
+                </span>
+        </div>
+        <div class="product-properties">
+          <span class="product-price">
+                  <b><%= pretty_amount drink.price %></b>
+                </span>
+        </div>
+        <%= form_for([@bar, @bar.orders.build]) do |f| %>
+        <%= f.hidden_field :bar_id %>
+        <%= f.submit "Add Drink", :class => "card__addToCart" %>
+        <%= hidden_field_tag :drink_id, drink.id %>
+        <% end %>
+</div>
+</div>
 </div>
 <% end %>
-<% end %>
-</div>
-</div>
-</div>
-</div>
+</body>
