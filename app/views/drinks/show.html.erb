@@ -1,52 +1,45 @@
 <!-- Page after drinks page -->
-
-<div class="review order">
-<div class="row">
-
-<div class="thumbnail">
-
+<body id="drinks">
 <p id="notice"><%= notice %></p>
-<div id="customdrink" class="xyz">
-<p>
-  <h1><%= @drink.name %></h1>
-</p>
+<div class="container">
+<div class="card card-order">
+<div class="card-head card-head-order">
+  <img src="https://s5.postimg.org/wy79025cz/nike_Logo_White.png" alt="logo" class="card-logo">
+  <img src="http://www.stickpng.com/assets/images/580b57fbd9996e24bc43c099.png" alt="drink" class="product-img order-img">
+  <div class="product-detail product-detail-order-name">
+      <h2><%= @drink.name %></h2>
+    </div>
+</div>
+<div class="card-body card-body-order">
+  <span class="product-title product-title-order">
+      <%=raw @drink.description %>
+    </span>
+    <div class="product-properties">
 
-<div>
-<p>
-  <%= image_tag @drink.image, :size => "130x90"%>
-</p>
 
-<p>
-  <%= @drink.description %>
-</p>
+      <span class="product-price product-price-order">
+              USD<b><%= pretty_amount(@drink.price) %></b>
+            </span>
+    </div>
+<div class="instructions">
 
-<p>
-  <strong>Price:</strong>
-  <%= pretty_amount(@drink.price)  %>
-</p>
 
 <%= form_for([@order.order_items.build]) do |f| %>
-<p>
-  <%= f.label :quantity  %>
-  <%= f.number_field :quantity, min: 1, value: 1  %>
-</p>
-<p>
-  <%= f.label :instructions  %>
-  <%= f.text_area :instructions, placeholder: "Example: Hold the ice..." %>
-</p>
-<p>
+<div class="inst1">
+  <p><%= f.label :quantity  %></p>
+  <%= f.number_field :quantity, min: 1, value: 1, :class => "instructionsfield fieldquantity"  %>
+</div>
+  <div class="inst2">
+    <p><%= f.label :instructions  %></p>
+    <%= f.text_area :instructions, placeholder: "Example: Hold the ice...", :class => "instructionsfield two"%>
+  </div>
   <%= f.hidden_field :drink_id, value: "#{@drink.id}" %>
-</p>
-<p>
   <%= f.hidden_field :order_id %>
-</p>
-<p>
-  <%= f.submit "Review Order", :class => "btn" %>
-</p>
+  <%= f.submit "Review Order", :class => "card__addToCart addToCartOrder" %>
 <%= hidden_field_tag :bar_id, @bar.id %>
 <% end %>
 </div>
 </div>
 </div>
 </div>
-</div>
+</body>
