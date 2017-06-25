@@ -1,0 +1,48 @@
+<!-- Page after drinks page -->
+<body id="drinks">
+<p id="notice"><%= notice %></p>
+<div class="container">
+<div class="card card-order">
+<div class="card-head card-head-order">
+  <%= image_tag src="thumbnail.png", class: "card-logo" %>
+  <img src="<%= @drink.image%>" alt="drink" class="product-img order-img">
+  <div class="product-detail product-detail-order-name">
+      <h2><%= @drink.name %></h2>
+      <span class="product-title product-title-order">
+          <%=raw @drink.description %>
+        </span>
+    </div>
+</div>
+<div class="card-body card-body-order">
+  <span class="product-title product-title-order">
+
+    </span>
+    <div class="product-properties">
+
+
+      <span class="product-price product-price-order">
+              <b><%= pretty_amount(@drink.price) %></b>
+            </span>
+    </div>
+<div class="instructions">
+
+
+<%= form_for([@order.order_items.build]) do |f| %>
+<div class="inst1">
+  <p><%= f.label :quantity  %></p>
+  <%= f.number_field :quantity, min: 1, value: 1, :class => "instructionsfield fieldquantity"  %>
+</div>
+  <div class="inst2">
+    <p><%= f.label :instructions  %></p>
+    <%= f.text_area :instructions, placeholder: "Example: Hold the ice...", :class => "instructionsfield two"%>
+  </div>
+  <%= f.hidden_field :drink_id, value: "#{@drink.id}" %>
+  <%= f.hidden_field :order_id %>
+  <%= f.submit "Review Order", :class => "card__addToCart addToCartOrder" %>
+<%= hidden_field_tag :bar_id, @bar.id %>
+<% end %>
+</div>
+</div>
+</div>
+</div>
+</body>
