@@ -35,3 +35,4 @@ lon = parse["location"]["lng"]
       	Drink.create(name: "CoronaRita", description: "2-Margerita\r\n1-Corona", price: 950, image: "https://pull01-kegworks.netdna-ssl.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/c/o/corona-rita-b1_1_1.jpg", bar_id: bar.id)
       	Drink.create(name: "Caipirinha", description: "2-Cachaca\r\n1-Lime", price: 950, image: "http://cdn3.foodviva.com/static-content/food-images/brazilian-drinks/caipirinha-cocktail/caipirinha-cocktail.jpg", bar_id: bar.id)
       end
+Message.create(content: "Hello World!")
