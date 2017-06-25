@@ -1,9 +1,5 @@
-<p id="notice"><%= notice %></p>
-
-
-
 <h1 id="bar-header">Pick a bar!</h1>
-
+<div class="container">
 <br>
 <div class="bs-example" data-example-id="striped-table">
   <table class="table table-striped table-responsive">
@@ -24,13 +20,12 @@
         <td><%= bar.rating %></td>
         <td><%= bar.vicinity %></td>
         <td><%=link_to "Bar Tapp", "/bars/#{@bars.find_by(name: bar.name)&.id}/drinks", class: "btn btn-default"%></td>
-
       </tr>
       <% end %>
     </tbody>
   </table>
 </div>
-
+</div>
 <!--
 <div id="map"></div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZXTCzH0s0nEwgcAlNom-O1bLGzB3V3o0&libraries=places&callback=initMap" async defer></script> -->
