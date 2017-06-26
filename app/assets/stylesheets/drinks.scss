@@ -45,10 +45,18 @@
 }
 .card-logo-bar {
   margin-top: -5px;
-  margin-left: -400px;
+  margin-left: -550px;
   margin-bottom: 100px;
 }
-
+.card-logo-drink-menu {
+  margin-left: -25px;
+  margin-top: -8px;
+}
+.card-logo-show {
+  width: 300px;
+  margin-left: -20px;
+  margin-top: -1px;
+}
 .product-img {
   position: absolute;
   left: 0;
@@ -275,14 +283,13 @@
   margin: 0 auto 15px;
   margin-top: 30px;
   padding: 35px 150px 35px 150px;
-  border: 5px solid #000;
+  border: 5px solid black;
   border-radius: 50px;
   text-align: center;
   text-transform: uppercase;
   font-size: 34px;
+  background-color: #FFF;
   color: #000;
-
-  background: white;
 }
 .instructions {
   margin-top: 200px;
@@ -347,4 +354,11 @@ font-size: 50px;
 }
 .bar-view-rating-text {
   margin-left: 120px;
+}
+#drink-show-name {
+    margin-left: -150px;
+    font-size: 80px;
+}
+#drink-show-description {
+  margin-left: 30px;
 }

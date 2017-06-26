@@ -15,7 +15,12 @@ $( document ).ready(function() {
     $('#code3').attr("class", "btn status-btn-pressed");
     App.room.speak("Ready!");
   })
-
+  $('#payment-btn').click(function () {
+    console.log("payment btn clicked");
+    $('.stripe-button-el').trigger("click");
+  })
+  
+  $('.stripe-button-el').hide();
 
   var myFunction = function() {
     var n = $('#messages p').length;

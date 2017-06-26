@@ -4,11 +4,11 @@
 <div class="container">
 <div class="card card-order">
 <div class="card-head card-head-order">
-  <%= image_tag src="thumbnail.png", class: "card-logo" %>
+  <%= image_tag src="thumbnail.png", class: "card-logo card-logo-show" %>
   <img src="<%= @drink.image%>" alt="drink" class="product-img order-img">
   <div class="product-detail product-detail-order-name">
-      <h2><%= raw @drink.name %></h2>
-      <span class="product-title product-title-order">
+      <h2 id="drink-show-name"><%= raw @drink.name %></h2>
+      <span class="product-title product-title-order" id="drink-show-description">
           <%=raw @drink.description %>
         </span>
     </div>
