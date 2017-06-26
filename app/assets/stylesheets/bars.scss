@@ -8,7 +8,6 @@
   font-family: 'Roboto', sans-serif;
   #landingpage {
     img {
-      // background-color: rgba(255, 255, 255, .5);
       border-radius: 20px;
       height: 30vh;
       width: 80vw;
@@ -34,9 +33,9 @@
       font-size: 5em;
     }
   text-align: center;
-  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
-               8px 8px 13px rgba(0,0,0,0.1),
-               0px 18px 23px rgba(0,0,0,0.1);
+  // text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+  //              8px 8px 13px rgba(0,0,0,0.1),
+  //              0px 18px 23px rgba(0,0,0,0.1);
 }
 #content {
   display: flex;
