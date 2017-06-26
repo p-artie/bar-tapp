@@ -2,17 +2,17 @@ $( document ).ready(function() {
     console.log( "Dom's ready! Let's go!" );
 
   $('#code1').click(function () {
-    $('#code1').attr("class", "btn btn-success", "disabled", "disabled");
+    $('#code1').attr("class", "btn status-btn-pressed");
     App.room.speak("Order Recieved");
   })
 
   $('#code2').click(function () {
-    $('#code2').attr("class", "btn btn-success");
+    $('#code2').attr("class", "btn status-btn-pressed");
     App.room.speak("In-Progress");
   })
 
   $('#code3').click(function () {
-    $('#code3').attr("class", "btn btn-success");
+    $('#code3').attr("class", "btn status-btn-pressed");
     App.room.speak("Ready!");
   })
 

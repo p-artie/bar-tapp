@@ -10,7 +10,7 @@
 
 .card {
   border-radius: 80px;
-  box-shadow: -28px 30px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: -28px 30px 2px rgba(0, 0, 0, 0.2);
   font-family: 'Roboto', sans-serif;
 }
 .card-order {
@@ -32,6 +32,7 @@
 
   border-radius: 80px 80px 0 0;
 }
+
 .card-head-order{
   height: 900px;
 }
@@ -41,6 +42,11 @@
   margin: 20px;
   margin-left: 60px;
   margin-top: 60px;
+}
+.card-logo-bar {
+  margin-top: -5px;
+  margin-left: -400px;
+  margin-bottom: 100px;
 }
 
 .product-img {
@@ -79,8 +85,9 @@
   // margin-left: -50px;
 }
 .product-detail-order-name {
-  margin-left: 250px;
+  margin-left: 200px;
 }
+
 .back-text {
   display: inline-block;
   font-size: 340px;
@@ -128,8 +135,8 @@
   padding: 6px 16px;
   border-radius: 12px;
   top: -2px;
-  margin-left: 20px;
-  margin-top: -5px;
+  margin-left: -10px;
+  margin-top: 40px;
 }
 
 .product-caption {
@@ -315,7 +322,29 @@ font-size: 50px;
 }
 .instructionsfield label {
 font-size: 50px;
+
 }
 .addToCartOrder {
   margin-top: 60px;
+}
+.bar-view-rating {
+  margin-left: 250px;
+  font-size: 40px;
+}
+.bottom-button-bar {
+
+  margin: -25px 50px 100px 50px;
+}
+.bar-view-name {
+  margin: -70px;
+}
+.bar-photo img{
+  margin-top: 50px;
+  height: 300px;
+  width: 300px;
+  border-radius: 20px;
+  box-shadow: -10px 20px 15px -10px rgba(142, 158, 171, 0.8);
+}
+.bar-view-rating-text {
+  margin-left: 120px;
 }
