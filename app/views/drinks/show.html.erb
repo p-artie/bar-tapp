@@ -7,7 +7,7 @@
   <%= image_tag src="thumbnail.png", class: "card-logo" %>
   <img src="<%= @drink.image%>" alt="drink" class="product-img order-img">
   <div class="product-detail product-detail-order-name">
-      <h2><%= @drink.name %></h2>
+      <h2><%= raw @drink.name %></h2>
       <span class="product-title product-title-order">
           <%=raw @drink.description %>
         </span>
