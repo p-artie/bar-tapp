@@ -1,5 +1,10 @@
 <div id="totalbody container">
-  <%= image_tag src="logo_long_trimmed3.png", class: "logo"  %>
+  <%= link_to root_path do %>
+     <%= image_tag src="logo_long_trimmed3.png", class: "logo"  %>
+  <% end %>
+
+
+
   <h1 id="order-number" ><strong>  Order # <%= @order.id %> </strong></h1>
 
   <h2 id="thanks-paid">Thanks, you paid <strong><%= pretty_amount(@order.total) %></strong>!</h2>
