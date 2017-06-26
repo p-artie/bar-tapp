@@ -27,9 +27,9 @@ lon = parse["location"]["lng"]
       Bar.all.each do |bar|
         #Add Margin Left Dynamically for Drink Margin: XXpx
       	Drink.create(name: "Screwdriver", description: "<p>2 Orange Juice</p><br><p>1 Vodka</p>", price: 550, image: "http://az659704.vo.msecnd.net/v1/image/c_lpad,w_1500,h_1500/v1400602509/cocktail_bloody_screwdriver-1.png", bar_id: bar.id)
-      	Drink.create(name: "Bloody Mary", description: "<p>2 Tomato Juice</p><br><p>1 Vodka</p>", price: 650, image: "http://az659704.vo.msecnd.net/v1/image/c_lpad,w_1500,h_1500/v1400602501/cocktail_bloody_mary-1.png", bar_id: bar.id)
+      	Drink.create(name: "Bloody <br>Mary", description: "<p>2 Tomato Juice</p><br><p>1 Vodka</p>", price: 650, image: "http://az659704.vo.msecnd.net/v1/image/c_lpad,w_1500,h_1500/v1400602501/cocktail_bloody_mary-1.png", bar_id: bar.id)
       	Drink.create(name: "Cuba Libre", description: "<p>2 Coke</p><br><p>1 Rum</p>", price: 750, image: "http://www.drinkoftheweek.com/wp-content/thumbnails/1400.png", bar_id: bar.id)
-      	Drink.create(name: "Tequila Sunrise", description: "<p>2 Orange Juice</p><br><p>1 Tequila</p>", price: 550, image: "http://www.tequilasunrisecocktail.com/data/images/cocktail/3_1404922491_tequila.png", bar_id: bar.id)
+      	Drink.create(name: "Tequila<br>Sunrise", description: "<p>2 Orange Juice</p><br><p>1 Tequila</p>", price: 550, image: "http://www.tequilasunrisecocktail.com/data/images/cocktail/3_1404922491_tequila.png", bar_id: bar.id)
       	Drink.create(name: "Mojito", description: "<p>2 Lime Juice</p><br><p>1 Rum</p>", price: 450, image: "http://www.pngmart.com/files/4/Mojito-Transparent-Background.png", bar_id: bar.id)
       	Drink.create(name: "Pina Colada", description: "<p>2 Pineapple</p><br><p>1 Cream of Coconut</p>", price: 550, image: "http://donq.com/assets/recipes/images/large/LazyPinaColada_large.png", bar_id: bar.id)
       	Drink.create(name: "Miami Vice", description: "<p>2 Fruit</p><br><p>1 Rum</p>", price: 850, image: "http://az659704.vo.msecnd.net/v1/image/c_lpad,w_1500,h_1500/v1400603979/cocktail_virgin_cherry_fizzy-1.png", bar_id: bar.id)
