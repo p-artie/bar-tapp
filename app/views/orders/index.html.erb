@@ -1,44 +1,55 @@
-<div id="my_div" class="container">
+<div id="orders">
+  <div class="order-logo">
+    <%= image_tag src="logo_long_trimmed3.png", :id => "bar__view-logo" %>
+  </div>
+  <h1>Bar Orders</h1>
 
-  <h1>Bartender View</h1>
-  <h3>Orders</h3>
 
-  <%= Drink.find(@order_items[0].drink_id).name  %>
 
-  <table class= "table table-striped">
-    <thead>
-      <tr>
-        <th>Order Number</th>
-        <th>Drink Names</th>
-        <th>Quantity</th>
-        <th>Instructions</th>
-        <th colspan="3">Status</th>
-      </tr>
-    </thead>
 
-    <tbody>
-      <% @orders.each do |order| %>
-        <tr>
-          <td>#<%= order.id %></td>
-          <% @order_items.each_with_index do |item, index| %>
-          <tr>
-            <% if item.order_id == order.id %>
-              <td></td>
-              <td><%= Drink.find(@drink_ids[index]).name%></td>
-              <td><%= item.quantity  %></td>
-              <td><%= item.instructions %></td>
-            <% end %>
-          </tr>
+  <% @orders.each do |order| %>
+    <div class="order-row-unique">
+      <div class="name-instructions">
+        <div class="">
+          #<%= order.id %>
+        </div>
+        <% @order_items.each_with_index do |item, index| %>
+          <% if item.order_id == order.id %>
+            <div class="order-specifics">
+              <div class="bar__view-quantity">
+                <%= item.quantity  %>
+              </div>
+              <div class="bar__view-drink-name">
+                <%= Drink.find(@drink_ids[index]).name%>
+              </div>
+              <div class="bar__view-instructions">
+                <%= item.instructions %>
+              </div>
+
+            </div>
+
           <% end %>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+        <% end %>
+        <div ></div>
+        <div></div>
+      </div>
 
-  <button id="code1" type="button" class="btn btn-default" style="width:25%" data-behavior= "room_speaker" >Order Received</button>
+      <div class="quanity-button">
+        <div></div>
+        <div></div>
+      </div>
 
-  <button id="code2" type="button" class="btn btn-default" style="width:25%" data-behavior= "room_speaker" >In-progress</button>
+      <div class="status-btn-div">
+        <button id="code1" type="button" class="btn btn-default status-btn" style="width:25%" data-behavior= "room_speaker" >Order Received</button>
 
-  <button id="code3" type="button" class="btn btn-default" style="width:25%" data-behavior= "room_speaker" > Drink ready!</button>
+        <button id="code2" type="button" class="btn btn-default status-btn" style="width:25%" data-behavior= "room_speaker" >In-progress</button>
+
+        <button id="code3" type="button" class="btn btn-default status-btn" style="width:25%" data-behavior= "room_speaker" > Drink ready!</button>
+      </div>
+
+    </div>
+  <% end %>
+
+
 
 </div>
