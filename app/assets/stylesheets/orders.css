@@ -74,19 +74,21 @@
 }
 .order-row-unique {
   background: rgba(255, 255, 255, .5);
-  border: 2px solid black;
+  /*border: 2px solid black;*/
   display: flex;
   justify-content: space-between;
   border-radius: 50px;
-  margin: 20px;
+  margin: 30px 20px;
   padding: 0px 60px 10px 15px;
   font-size: 26px;
+  box-shadow: -10px 15px 2px rgba(0, 0, 0, 0.2);
 }
 .price-total {
   display: flex;
   justify-content: space-between;
   text-align: center;
   overflow: hidden;
+
 }
 .name-instructions {
   display: flex;
@@ -102,6 +104,7 @@
 }
 .prices {
   margin: 30px 5px 0px 20px;
+  font-size: 30px;
 }
 .order-instructions {
   resize: none;
@@ -140,10 +143,11 @@
   height: 100%;
 }
 .add-drink-button {
-  font-size: 50px;
-  border-radius: 10px;
+  font-size: 40px;
+  border-radius: 50px;
   border: 1px solid black;
   margin: 20px;
+  padding: 20px 100px;
 }
 .stripe-button span {
   height: 300px;
