@@ -8,6 +8,9 @@
 <div class="card">
   <div class="card-head">
           <%= image_tag src="thumbnail.png", class: "card-logo" %>
+          <span class="badge">
+            New
+          </span>
     <img src="<%= drink.image%>" alt="Beer" class="product-img">
     <div class="product-detail">
         <h2><%= raw drink.name %></h2><%=raw drink.description %>
@@ -21,9 +24,7 @@
           <span class="product-title">
                   <%= @bar.name  %>
 
-                  <span class="badge">
-                    New
-                  </span>
+
           </span>
           <span class="product-caption">
                   Drink rating:

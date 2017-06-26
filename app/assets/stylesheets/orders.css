@@ -80,7 +80,7 @@
   border-radius: 50px;
   margin: 20px;
   padding: 0px 60px 10px 15px;
-  font-size: 26px;
+  font-size: 32px;
 }
 .price-total {
   display: flex;
@@ -131,7 +131,7 @@
   font-size: 20px;
 }
 .order-drink-image {
-  margin-top: 20px;
+  margin-top: 35px;
   padding-right: 10px;
   height: 100px;
   width: 80px;

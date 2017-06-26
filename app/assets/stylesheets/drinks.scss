@@ -10,7 +10,7 @@
 
 .card {
   border-radius: 80px;
-  box-shadow: -28px 30px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: -28px 30px 2px rgba(0, 0, 0, 0.2);
   font-family: 'Roboto', sans-serif;
 }
 .card-order {
@@ -85,8 +85,9 @@
   // margin-left: -50px;
 }
 .product-detail-order-name {
-  margin-left: 250px;
+  margin-left: 200px;
 }
+
 .back-text {
   display: inline-block;
   font-size: 340px;
@@ -134,8 +135,8 @@
   padding: 6px 16px;
   border-radius: 12px;
   top: -2px;
-  margin-left: 20px;
-  margin-top: -5px;
+  margin-left: -10px;
+  margin-top: 40px;
 }
 
 .product-caption {
