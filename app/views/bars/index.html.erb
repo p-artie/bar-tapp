@@ -1,31 +1,47 @@
-<h1 id="bar-header">Pick a bar!</h1>
-<div class="container">
-<br>
-<div class="bs-example" data-example-id="striped-table">
-  <table class="table table-striped table-responsive">
-    <thead>
-      <tr>
-        <th>Logo</th>
-        <th>Bar Name</th>
-        <th>Rating</th>
-        <th>Address</th>
-        <th>Order Drinks</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @res.each do |bar| %>
-      <tr>
-        <td><%= image_tag bar.photos.first.nil? ? '' : bar.photos.first.fetch_url(100) %></td>
-        <td><%= link_to bar.name, "/bars/#{@bars.find_by(name: bar.name)&.id}/drinks" %></td>
-        <td><%= bar.rating %></td>
-        <td><%= bar.vicinity %></td>
-        <td><%=link_to "Bar Tapp", "/bars/#{@bars.find_by(name: bar.name)&.id}/drinks", class: "btn btn-default"%></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
-</div>
+
 <!--
 <div id="map"></div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZXTCzH0s0nEwgcAlNom-O1bLGzB3V3o0&libraries=places&callback=initMap" async defer></script> -->
+
+
+<body id="drinks">
+<div style="padding: 30px"></div>
+<% @res.each do |bar| %>
+<div class="container">
+<div class="card">
+  <div class="card-head">
+          <%= image_tag src="thumbnail.png", class: "card-logo card-logo-bar" %>
+
+    <div class="product-detail bar-view-name">
+        <h2><%= bar.name %></h2>
+      </div>
+      <div class="bar-photo">
+      <%= image_tag bar.photos.first.nil? ? '' : bar.photos.first.fetch_url(100) %>
+    </div>
+</div>
+<div class="card-body">
+  <div class="product-desc">
+          <span class="product-title">
+
+<%= bar.vicinity %>
+
+          </span>
+          <span class="product-caption bar-view-rating-text">
+                  Bar rating:
+                </span>
+          <span class="product-rating">
+
+                </span>
+        </div>
+        <div class="product-properties">
+          <span class="product-price bar-view-rating">
+                  <b><%= bar.rating %></b>
+                </span>
+        </div>
+
+        <%=link_to "Bar Tapp", "/bars/#{@bars.find_by(name: bar.name)&.id}/drinks", class: "card__addToCart bottom-button-bar"%>
+</div>
+</div>
+</div>
+<% end %>
+</body>
