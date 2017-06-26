@@ -47,7 +47,7 @@
         <span>Total: <%= pretty_amount(@amount) %></span>
       </label>
     </article>
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" style="visibility: hidden;"
             data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
             data-description="<%= @description %>"
             data-amount="<%= @amount %>"
@@ -55,7 +55,7 @@
     </script>
   <% end %>
   <br>
-
+  <button type="button" name="button" class="btn btn-primary btn-lg" id="payment-btn">Pay with Card</button>
   </div>
 
   </div>

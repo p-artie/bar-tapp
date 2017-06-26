@@ -149,8 +149,8 @@
   margin: 20px;
   padding: 20px 100px;
 }
-.stripe-button span {
-  height: 300px;
+.stripe-button-el {
+  visibility: hidden;
 }
 .orders__header {
   font-size: 80px;
@@ -207,4 +207,10 @@
 .order-specifics{
   display: flex;
   margin: 10px;
+}
+#payment-btn {
+  height: 120px;
+  width: 300px;
+  border-radius: 30px;
+  font-size: 30px;
 }
