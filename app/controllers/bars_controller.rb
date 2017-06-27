@@ -8,7 +8,7 @@ class BarsController < ApplicationController
   end
 
   def index
-    postres = HTTParty.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAxQsrLXpnyeclKsKCTcqZ9d7Nn92gRkn8").to_json
+    postres = HTTParty.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyC3k4qukOVSrE2DYi0XeDjBxMd_y2-6-yM").to_json
     parse = JSON.parse(postres)
     lat = parse["location"]["lat"]
     lon = parse["location"]["lng"]
