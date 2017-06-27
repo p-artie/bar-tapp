@@ -1,4 +1,4 @@
-<div id="orders">
+<div id="bar__view">
   <div class="order-logo">
     <%= image_tag src="logo_long_trimmed3.png", :id => "bar__view-logo" %>
   </div>
@@ -8,19 +8,19 @@
 
 
   <% @orders.each do |order| %>
-    <div class="order-row-unique">
+    <div class="order-row-unique bar__view-row">
       <div class="name-instructions">
         <div class="">
-          #<%= order.id %>
+          Order #<%= order.id %>
         </div>
         <% @order_items.each_with_index do |item, index| %>
           <% if item.order_id == order.id %>
             <div class="order-specifics">
-              <div class="bar__view-quantity">
-                <%= item.quantity  %>
-              </div>
               <div class="bar__view-drink-name">
                 <%= Drink.find(@drink_ids[index]).name%>
+              </div>
+              <div class="bar__view-quantity">
+                <%= item.quantity  %>
               </div>
               <div class="bar__view-instructions">
                 <%= item.instructions %>

@@ -168,19 +168,37 @@
 .status-btn {
   border-radius: 30px;
   margin: 10px;
-  width: 80px;
+  white-space: normal;
   height: 120px;
-  background-color: white;
+  /*background-color: white;*/
   border: 1px solid black;
+  font-size: 18px;
+  decoration: none;
 }
 .status-btn-pressed {
   border-radius: 30px;
   margin: 10px;
-  width: 80px;
+  width: 100px;
   height: 120px;
-  background-color: #6CE574;
+  /*background-color: rgba(81, 163, 81, 0.9);*/
+  background-color: rgba(0, 0, 0, 1);
+  color: #FFCD32;
   border: 1px solid black;
+  font-size: 18px;
+  decoration: none;
+  font-weight: bold;
+  white-space: normal;
 }
+.status-btn-pressed:focus{
+  outline:0;
+  color: #FFCD32;
+ }
+.status-btn-pressed:hover{
+ color: #FFCD32;
+ }
+.status-btn:focus{
+  outline:0;
+ }
 .status-btn-div {
   width: 600px;
   height: 100%;
@@ -190,19 +208,21 @@
 }
 .bar__view-quantity{
   /*font-size: 30px;*/
-  padding: 10px;
+  padding: 10px 30px 10px 20px;
   font-weight: bold;
 }
 .bar__view-drink-name{
-  padding: 0 10px;
   font-weight: bold;
   padding: 10px;
+  width: 200px;
 }
 .bar__view-instructions{
   border: 1px solid black;
   border-radius: 5px;
   margin-left: 10px;
   padding: 10px;
+  width: 400px;
+  font-size: 26px;
 }
 .order-specifics{
   display: flex;
@@ -213,4 +233,13 @@
   width: 300px;
   border-radius: 30px;
   font-size: 30px;
+}
+.bar__view-row {
+  /*background: white;*/
+  border: 1px solid black;
+  border-radius: 10px;
+}
+#bar__view{
+  background-color: #EBEBEB;
+  height: 100%;
 }
