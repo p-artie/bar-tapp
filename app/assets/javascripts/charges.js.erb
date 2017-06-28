@@ -3,7 +3,7 @@ $( document ).ready(function() {
 
   $('#code1').click(function () {
     $('#code1').attr("class", "btn status-btn-pressed");
-    App.room.speak("Order Recieved");
+    App.room.speak("Order Received");
   })
 
   $('#code2').click(function () {
@@ -19,7 +19,7 @@ $( document ).ready(function() {
     console.log("payment btn clicked");
     $('.stripe-button-el').trigger("click");
   })
-  
+
   $('.stripe-button-el').hide();
 
   var myFunction = function() {
