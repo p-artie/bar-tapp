@@ -33,7 +33,7 @@ lon = parse["location"]["lng"]
       	Drink.create(name: "Mojito", description: "<p>2 Lime Juice</p><br><p>1 Rum</p>", price: 450, image: "http://www.pngmart.com/files/4/Mojito-Transparent-Background.png", bar_id: bar.id)
       	Drink.create(name: "Pina Colada", description: "<p>2 Pineapple</p><br><p>1 Cream of Coconut</p>", price: 550, image: "http://donq.com/assets/recipes/images/large/LazyPinaColada_large.png", bar_id: bar.id)
       	Drink.create(name: "Miami Vice", description: "<p>2 Fruit</p><br><p>1 Rum</p>", price: 850, image: "http://az659704.vo.msecnd.net/v1/image/c_lpad,w_1500,h_1500/v1400603979/cocktail_virgin_cherry_fizzy-1.png", bar_id: bar.id)
-      	Drink.create(name: "CoronaRita", description: "<p>2 Margerita</p><br><p>1 Corona</p>", price: 950, image: "http://monterreymex.com/wordpress/wp-content/uploads/2015/05/coronarita.png", bar_id: bar.id)
+      	Drink.create(name: "CoronaRita", description: "<p>2 Margarita</p><br><p>1 Corona</p>", price: 950, image: "http://monterreymex.com/wordpress/wp-content/uploads/2015/05/coronarita.png", bar_id: bar.id)
       	Drink.create(name: "Caipirinha", description: "<p>2 Cachaca</p><br><p>1 Lime</p>", price: 950, image: "http://maloga.net/image/cache/data/caipi-500x500.png", bar_id: bar.id)
       end
 Message.create(content: "Hello World!")
