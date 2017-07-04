@@ -11,7 +11,12 @@ Go to [localhost:3000](localhost:3000) on your browser of choice to see the app 
 ## Built With
 
 * [Rails](http://rubyonrails.org/) - Framework
+* [ActionCable](http://edgeguides.rubyonrails.org/action_cable_overview.html) - Cross View Communication
 * [Bootstrap](http://getbootstrap.com/) - Styling
+* [Stripe](https://stripe.com/docs/checkout/rails) - Payment processing and credit card information storage
+* [PostgreSQL](https://www.postgresql.org/) - Database
+* [Google Geolocation API](https://developers.google.com/maps/documentation/geolocation/intro) - Geolocation
+* [Google Places Library API](https://developers.google.com/places/web-service/search) - Bar information
 
 ## Authors
 
